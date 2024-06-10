@@ -1,0 +1,46 @@
+---
+import Header from '@components/layout/Header.astro';
+import NavBar from '@components/ui/NavBar.astro';
+import Footer from '@components/ui/Footer.astro';
+import '@styles/global.css';
+import '@styles/cssReset.css';
+
+interface Props {
+    title: string;
+    desc: string;
+    seoImage: string;
+    url: string;
+    lang: string;
+    icon: string;
+    iconType: string;
+}
+
+const { 
+    title, 
+    desc, 
+    seoImage, 
+    url, 
+    lang,
+    icon,
+    iconType
+}: Props = Astro.props;
+
+---
+
+
+<html lang={lang}>
+	<Header 
+        title={title}
+        desc={desc}
+        seoImage={seoImage}
+        url={url}
+        lang={lang}
+        icon={icon}
+        iconType={iconType}
+    />
+	<body>
+        <NavBar />
+		<slot />
+        <Footer />
+	</body>
+</html>

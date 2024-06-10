@@ -1,0 +1,50 @@
+---
+import { siteSEO } from '@data/seo/siteSeo';
+
+interface Props {
+    title: string;
+    desc: string;
+    seoImage: string;
+    url: string;
+    lang: string;
+    icon: string;
+    iconType: string;
+}
+
+const { 
+    title, 
+    desc, 
+    seoImage, 
+    url, 
+    lang,
+    icon,
+    iconType
+}: Props = Astro.props;
+
+const siteTitle = siteSEO.title;
+const siteKeywords = siteSEO.keywords;
+const siteTwitter = siteSEO.twitter;
+
+
+---
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title} | {siteTitle}</title>
+    <meta name="description" content={desc} />
+    <meta name="keywords" content={siteKeywords} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:image" content={seoImage} />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={siteTwitter} />
+    <meta name="twitter:creator" content={siteTwitter} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={seoImage} />
+    <link rel="icon" type={iconType} href={icon} />
+</head>

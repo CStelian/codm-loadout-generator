@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets"
+
+import logo from '@assets/codm-db-logo.png'
+---
+
+<nav class="navbar">
+
+	<div class="logo-container">
+
+		<a href="https://www.codmdb.com/">
+            <Image src={logo} alt="CoDM DB Logo" class="logo" />
+        </a>
+
+    </div>
+
+</nav>
+
+<style>
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        background-color: #ffe937;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        width: 220px;
+        height: auto;
+    }
+
+</style>

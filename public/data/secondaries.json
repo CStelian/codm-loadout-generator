@@ -1,0 +1,172 @@
+{
+    "pistol": [
+        {
+            "weapon": "J358",
+            "muzzle": ["RTC Light Muzzle Brake", "MIP Light Flash Guard", "OWC Light Compensator"],
+            "barrel": ["J358 Custom Light", "J358 Long", "J358 Short"],
+            "optic": ["Classic Red Dot Sight", "Holographic Sight 1", "Classic Holographic Sight", "Red Dot Sight 2", "Holographic Sight 2", "Red Dot Sight 3", "Holographic Sight 3", "Red Dot Sight 1", "Red Dot Sight 4", "Red Dot Sight 5", "3X Tactical Scope 2", "Red Dot Sight 6", "4X Tactical Scope"],
+            "perk": ["Disable", "FMJ", "Wounding", "Sleight of Hand", "Full Ammo"],
+            "laser": ["RTC Laser 1mW", "MIP Laser 5mW", "OWC Laser - Tactical"],
+            "triggerAction": ["Match Grade Trigger", "Heavy Duty Trigger", "Lightweight Trigger"],
+            "ammunition": ["8 Round Reload", "Stopping Power Reload"],
+            "rearGrip": ["Shoulder Stock - Tactical", "Granulated Grip Tape", "Rubberized Grip Tape", "Shoulder Stock - Wood", "Stippled Grip Tape"]
+        },
+        {
+            "weapon": "MW11",
+            "muzzle": ["OWC Light Suppressor", "OWC Light Compensator", "RTC Light Muzzle Brake", "Tactical Suppressor", "MIP Light Flash Guard", "Monolithic Suppressor"],
+            "barrel": [".45 Tac Long", ".45 Suppressor Light", ".45 Compact"],
+            "optic": ["Classic Red Dot Sight", "Red Dot Sight 2", "Classic Holographic Sight", "Holographic Sight 2", "Red Dot Sight 3", "Holographic Sight 3", "Red Dot Sight 4", "Red Dot Sight 5", "Red Dot Sight 1", "Red Dot Sight 6", "Holographic Sight 1"],
+            "perk": ["Wounding", "FMJ", "Disable", "Sleight of Hand", "Full Ammo"],
+            "laser": ["RTC Laser 1mW", "OWC Laser - Tactical", "MIP Laser 5mW"],
+            "triggerAction": ["Match Grade Trigger", "Heavy Duty Trigger", "Lightweight Trigger"],
+            "ammunition": ["15 Round Reload", "20 Round Reload"],
+            "rearGrip": ["Granulated Grip Tape", "Stippled Grip Tape", "Rubberized Grip Tape"]
+        },
+        {
+            "weapon": ".50 GS",
+            "muzzle": ["OWC Light Suppressor", "OWC Light Compensator", "RTC Light Muzzle Brake", "Tactical Suppressor", "MIP Light Flash Guard", "Monolithic Suppressor"],
+            "barrel": ["MIP Extended Light Barrel", "OWC Marksman"],
+            "optic": ["Classic Red Dot Sight", "Red Dot Sight 2", "Tactical Scope", "Holographic Sight 2", "Red Dot Sight 3", "Holographic Sight 3", "Red Dot Sight 4", "Red Dot Sight 5", "Red Dot Sight 1", "Red Dot Sight 6", "Holographic Sight 1"],
+            "perk": ["Wounding", "FMJ", "Disable", "Sleight of Hand", "Full Ammo", "Akimbo"],
+            "laser": ["RTC Laser 1mW", "OWC Laser - Tactical", "MIP Laser 5mW"],
+            "triggerAction": ["Match Grade Trigger", "Heavy Duty Trigger", "Lightweight Trigger"],
+            "ammunition": ["Extended Mag A", "Large Extended Mag B"],
+            "rearGrip": ["Granulated Grip Tape", "Stippled Grip Tape", "Rubberized Grip Tape"]
+        },
+        {
+            "weapon": "Renetti",
+            "muzzle": ["OWC Light Suppressor", "RTC Compensator", "RTC Light Muzzle Brake", "Tactical Suppressor", "MIP Light Flash Guard", "Monolithic Suppressor"],
+            "barrel": ["MIP Extended Light Barrel", "OWC Ranger", "MIP Light"],
+            "optic": ["Classic Red Dot Sight", "Red Dot Sight 2", "Tactical Scope", "Holographic Sight 2", "Red Dot Sight 3", "Holographic Sight 3", "Red Dot Sight 4", "Red Dot Sight 5", "Red Dot Sight 1", "Red Dot Sight 6", "Holographic Sight 1"],
+            "stock": ["Folding Stock", "Control", "Combo"],
+            "perk": ["Wounding", "FMJ", "Disable", "Sleight of Hand", "Full Ammo"],
+            "laser": ["RTC Laser 1mW", "OWC Laser - Tactical", "MIP Laser 5mW"],
+            "triggerAction": ["Match Grade Trigger", "Heavy Duty Trigger", "Lightweight Trigger"],
+            "ammunition": ["Extended Mag A", "Large Extended Mag B"],
+            "rearGrip": ["Handmade Grip Tape", "Stippled Grip Tape", "Rubberized Grip Tape"]
+        },
+        {
+            "weapon": "Shorty",
+            "muzzle": ["Choke", "Tactical Suppressor", "OWC Light Compensator", "RTC Light Muzzle Brake", "Marauder Suppressor", "Monolithic Suppressor", "Flash Guard"],
+            "optic": ["Classic Red Dot Sight", "Red Dot Sight 3", "Red Dot Sight 6", "Holographic Sight 2", "Classic Holographic Sight", "3X Tactical Scope 1", "Holographic Sight 3", "3X Tactical Scope 2", "3X Tactical Scope 3", "Red Dot Sight 4", "Red Dot Sight 5", "Holographic Sight 1", "Red Dot Sight 2", "Tactical Scope"],
+            "stock": ["YKM Light Stock", "YKM Combat Stock", "RTC Steady Stock"],
+            "perk": ["Sleight of Hand", "Speed Up Kill", "Slide Flak Jacket", "Wounding", "Full Ammo", "Disable"],
+            "laser": ["RTC Laser 1mW", "OWC Laser - Tactical", "MIP Laser 5mW"],
+            "underbarrel": ["Strike Foregrip", "Merc Foregrip", "Operator Foregrip", "Tactical Foregrip A"],
+            "guard": ["OWC Stable", "OWC Commander", "OWC Slim"],
+            "ammunition": ["Slug Reload"]
+        },
+        {
+            "weapon": "Crossbow",
+            "bowstring": ["16 Bowstring", "28 Bowstring"],
+            "limb": ["Customized Limb", "Enhanced Limb", "Heavy Limb"],
+            "optic": ["Classic Red Dot Sight", "Red Dot Sight 3", "Red Dot Sight 6", "Holographic Sight 2", "3X Tactical Scope 1", "Holographic Sight 3", "Classic Holographic Sight", "4X Tactical Scope", "3X Tactical Scope 2", "3X Tactical Scope 3", "Red Dot Sight 4", "Red Dot Sight 5", "Holographic Sight 1", "OWC 4.4X Tactical Scope", "RTC 4.4X Tactical Scope", "Red Dot Sight 1", "Red Dot Sight 2", "Tactical Scope"],
+            "stock": ["Watcher Stock", "Ranger Stock", "Archer Stock"],
+            "perk": ["Tough", "Long Shot", "Melee Master", "Full Ammo", "Disable", "Sleight of Hand", "Wounding"],
+            "laser": ["MIP Laser 5mW", "OWC Laser - Tactical"],
+            "underbarrel": ["Strike Foregrip", "Quickdraw", "Merc Foregrip"],
+            "bolt": ["Sticky Grenade Bolt", "Thermite Bolt", "Gas Grenade Bolt"]
+        },
+        {
+            "weapon": "L-CAR 9",
+            "muzzle": ["RTC Muzzle Brake", "MIP Flashguard", "OWC Light Suppressor", "Infantry Compensator", "OWC Eliminator", "Agency Suppressor"],
+            "barrel": ["MIP Extended Light Barrel", "YKM Integral Suppressor", "OWC Ranger"],
+            "optic": ["Classic Red Dot Sight", "Red Dot Sight 1", "Tactical Scope", "Red Dot Sight 2", "Classic Holographic Sight", "Red Dot Sight 3", "Holographic Sight 1", "Red Dot Sight 4", "Holographic Sight 2", "Red Dot Sight 5", "Red Dot Sight 6"],
+            "stock": ["Light Weight Stock", "Marathon Stock", "Agile Stock"],
+            "perk": ["Sleight of Hand", "Wild Hip Fire", "Double Kill", "Fast Reload Kill", "Wounding", "Full Ammo", "Disable"],
+            "laser": ["1mW Steady Aim Laser", "5mW Combat Laser", "Aim Assist Laser"],
+            "foregrip": ["BO Foregrip", "Red Cell Foregrip", "Striker Foregrip", "Field Agent Foregrip"],
+            "ammunition": ["Fast Reload", "Extended Mag A", "Fast Extended Mag A"],
+            "rearGrip": ["Rustle Grip Tape", "Sturdy Grip Tape", "Firm Grip Tape"]
+        },
+        {
+            "weapon": "Dobvra",
+            "muzzle": ["OWC Light Compensator", "MIP Light Flash Guard", "Agency Suppressor", "Oil Can Suppressor", "OWC Light Suppressor", "Monolithic Suppressor", "RTC Compensator"],
+            "barrel": ["SSB 105mm", "SSL 308mm", "Sorokin 140mm Auto"],
+            "optic": ["Classic Red Dot Sight", "Red Dot Sight 1", "Red Dot Sight 2", "Holographic Sight 3", "Holographic Sight 2", "Holographic Sight 1", "Red Dot Sight 3", "Red Dot Sight 5", "Classic Holographic Sight", "Red Dot Sight 4", "Red Dot Sight 6"],
+            "stock": ["PP-Karabin", "PP-Skelet"],
+            "perk": ["Sleight of Hand", "Wounding", "FMJ", "Disable", "Full Ammo", "Akimbo"],
+            "laser": ["RTC Laser 1mW", "MIP Laser 5mW", "OWC Laser - Tactical"],
+            "triggerAction": ["Heavyweight Double-Action", "Lightweight Single-Action", "Lightweight Double-Action"],
+            "ammunition": ["20 Round Mags", "80 Round Drums"],
+            "rearGrip": ["VLK Prizrak", "VLK Spetznaz", "VLK Elita"]
+        },
+        {
+            "weapon": "Nail Gun"
+        },
+        {
+            "weapon": "Machine Pistol",
+            "muzzle": ["Marauder Flash Hider", "F8 Stabilizer", "Mercury Silencer", "NO.3 Rifle Brake", "M1929 Silencer", "Strife Compensator"],
+            "barrel": ["VDD 140MM HE", "VDD 35MM Short", "Burst-fire Conversion"],
+            "optic": ["Classic Red Dot Sight", "Red Dot Sight 1", "Nydar Model 47", "Red Dot Sight 2", "Red Dot Sight 3", "Holographic Sight 2", "MK 3 Sunfilter", "Red Dot Sight 4", "Red Dot Sight 5", "ZF4 3.5X Rifle Scope", "Red Dot Sight 6", "Classic Holographic Sight", "Holographic Sight 1", "Holographic Sight 3"],
+            "perk": ["Sleight of Hand", "Wounding", "FMJ", "Akimbo", "Full Ammo", "Disable"],
+            "triggerAction": ["Lightweight Trigger", "Steady Trigger", "Heavy Trigger", "Rapid Action", "Hair Trigger"],
+            "ammunition": ["7.62 GORENKO 40 Round Mags", "9MM 20 Round Mags", "8MM NAMBU 20 Round Mags"],
+            "rearGrip": ["Bakelite Grip", "Taped Grip", "Rubber Grip", "Polymer Grip", "Hatched Grip", "Fabric Grip", "Stippled Grip", "Leather Grip", "Granular Grip", "Pine Tar Grip"]
+        }
+    ],
+    "launcher": [
+        {
+            "weapon": "FHJ-18"
+        },
+        {
+            "weapon": "SMRS"
+        },
+        {
+            "weapon": "Thumper"
+        },
+        {
+            "weapon": "D13 Sector"
+        }
+    ],
+    "melee": [
+       {
+           "weapon": "Base Melee"
+       },
+       {
+           "weapon": "Knife"
+       },
+       {
+           "weapon": "Axe"
+       },
+       {
+           "weapon": "Shovel"
+       },
+       {
+           "weapon": "Baseball Bat"
+       },
+       {
+           "weapon": "Nunchucks"
+       },
+       {
+           "weapon": "Katana"
+       },
+       {
+           "weapon": "Prizefighters"
+       },
+       {
+           "weapon": "Wrench"
+       },
+       {
+           "weapon": "Sickle"
+       },
+       {
+           "weapon": "Machete"
+       },
+       {
+           "weapon": "Kali Sticks"
+       },
+       {
+           "weapon": "Butterfly Knife"
+       },
+       {
+           "weapon": "Sai"
+       },
+       {
+           "weapon": "Ballistic Knife"
+       },
+       {
+           "weapon": "Spear"
+       }
+    ]
+}
