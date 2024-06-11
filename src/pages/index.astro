@@ -25,6 +25,26 @@ const siteImage = siteSEO.image
 			<a href="/mp-loadout" class="generate-button">
 				Generate Multiplayer Loadout
 			</a>
+			<div class="secondary-buttons-list">
+				<a href="/mp-loadout/assault" class="secondary-button">
+					Generate Assault Rifle Loadout
+				</a>
+				<a href="/mp-loadout/sniper" class="secondary-button">
+					Generate Sniper Rifle Loadout
+				</a>
+				<a href="/mp-loadout/lmg" class="secondary-button">
+					Generate Light Machine Gun Loadout
+				</a>
+				<a href="/mp-loadout/smg" class="secondary-button">
+					Generate Submachine Gun Loadout
+				</a>
+				<a href="/mp-loadout/shotgun" class="secondary-button">
+					Generate Shotgun Loadout
+				</a>
+				<a href="/mp-loadout/marksman" class="secondary-button">
+					Generate Marksman Rifle Loadout
+				</a>
+			</div>
 			<a href="/br-loadout" class="generate-button" aria-disabled="true">
 				Generate Battle Royale Loadout (Coming Soon)
 			</a>
@@ -81,6 +101,30 @@ const siteImage = siteSEO.image
 	a[aria-disabled="true"] {
 		pointer-events: none;
 		opacity: 0.5;
+	}
+
+	.secondary-buttons-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+	}
+
+	.secondary-button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.5rem;
+		background-color: #000;
+		color: #ffe937;
+		border-radius: 0.5rem;
+		text-decoration: none;
+		transition: all 0.2s ease-in-out;
+		border: 1px solid #ffe937;
+	}
+
+	.secondary-button:hover {
+		background-color: #ffe937;
+		color: #000;
 	}
 
 </style>
