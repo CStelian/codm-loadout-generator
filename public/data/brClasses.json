@@ -1,0 +1,7 @@
+{
+    "disrupt": ["Trickster", "Trap Master", "Smoke Bomber", "Hacker", "Rewind", "Shock Wave", "Misdirection"],
+    "stealth": ["Quick Strike", "Ninja", "Poltergeist", "Pumped", "Jet Boost"],
+    "support": ["Medic", "Refitter", "Kinetic Station", "Revive"],
+    "defense": ["Defender", "Desperado", "Spotter", "Igniter"],
+    "tracker": ["Scout", "Clown", "Mechanic", "Airborne", "Ravager Launcher"]
+}

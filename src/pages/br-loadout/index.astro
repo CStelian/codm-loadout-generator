@@ -1,0 +1,1316 @@
+---
+import { siteSEO } from "@data/seo/siteSeo"
+import MainLayout from "@layouts/MainLayout.astro"
+
+const siteDesc = siteSEO.description
+const siteUrl = siteSEO.url
+const siteImage = siteSEO.image
+
+async function getBRWeaponTypes() {
+	return await fetch(`${Astro.url.origin}/data/brWeaponTypes.json`).then(res => res.json())
+}
+
+const brWeaponTypes = await getBRWeaponTypes()
+
+async function getBRWeapons() {
+	return await fetch(`${Astro.url.origin}/data/brWeapons.json`).then(res => res.json())
+}
+
+const brWeapons = await getBRWeapons()
+
+async function getBRGroundLootTypes() {
+	return await fetch(`${Astro.url.origin}/data/brGroundLootTypes.json`).then(res => res.json())
+}
+
+const brGroundLootTypes = await getBRGroundLootTypes()
+
+async function getBRGroundLoot() {
+	return await fetch(`${Astro.url.origin}/data/brGroundLoot.json`).then(res => res.json())
+}
+
+const brGroundLoot = await getBRGroundLoot()
+
+async function getBRClassTypes() {
+	return await fetch(`${Astro.url.origin}/data/brClassTypes.json`).then(res => res.json())
+}
+
+const brClassTypes = await getBRClassTypes()
+
+async function getBRClasses() {
+	return await fetch(`${Astro.url.origin}/data/brClasses.json`).then(res => res.json())
+}
+
+const brClasses = await getBRClasses()
+
+function getRandomGroundLootType() {
+	const randomIndex = Math.floor(Math.random() * brGroundLootTypes.length)
+
+	return brGroundLootTypes[randomIndex]
+}
+
+const groundLootPrimaryType = getRandomGroundLootType()
+const groundLootSecondaryType = getRandomGroundLootType()
+
+let groundLootPrimaryAmmoType = ""
+let groundLootSecondaryAmmoType = ""
+
+switch (groundLootPrimaryType) {
+	case "assault":
+		groundLootPrimaryAmmoType = "Heavy Ammo"
+		break
+	case "sniper":
+		groundLootPrimaryAmmoType = "Sniper Ammo"
+		break
+	case "lmg":
+		groundLootPrimaryAmmoType = "Heavy Ammo"
+		break
+	case "smg":
+		groundLootPrimaryAmmoType = "Light Ammo"
+		break
+	case "shotgun":
+		groundLootPrimaryAmmoType = "Shotgun Ammo"
+		break
+	case "marksman":
+		groundLootPrimaryAmmoType = "Sniper Ammo"
+		break
+	default:
+		groundLootPrimaryAmmoType = "Unknown"
+		break
+}
+
+switch (groundLootSecondaryType) {
+	case "assault":
+		groundLootSecondaryAmmoType = "Heavy Ammo"
+		break
+	case "sniper":
+		groundLootSecondaryAmmoType = "Sniper Ammo"
+		break
+	case "lmg":
+		groundLootSecondaryAmmoType = "Heavy Ammo"
+		break
+	case "smg":
+		groundLootSecondaryAmmoType = "Light Ammo"
+		break
+	case "shotgun":
+		groundLootSecondaryAmmoType = "Shotgun Ammo"
+		break
+	case "marksman":
+		groundLootSecondaryAmmoType = "Sniper Ammo"
+		break
+	default:
+		groundLootSecondaryAmmoType = "Unknown"
+		break
+}
+
+function getRandomGroundLootWeapon(weaponType: any) {
+	const randomIndex = Math.floor(Math.random() * brGroundLoot[weaponType].length)
+
+	return brGroundLoot[weaponType][randomIndex]
+}
+
+const groundLootPrimaryWeaponName = getRandomGroundLootWeapon(groundLootPrimaryType)
+const groundLootSecondaryWeaponName = getRandomGroundLootWeapon(groundLootSecondaryType)
+
+function getRandomWeaponType() {
+	const randomIndex = Math.floor(Math.random() * brWeaponTypes.length)
+
+	return brWeaponTypes[randomIndex]
+}
+
+const primaryType = getRandomWeaponType()
+const secondaryType = getRandomWeaponType()
+
+function getRandomWeapon(weaponType: any) {
+	const randomIndex = Math.floor(Math.random() * brWeapons[weaponType].length)
+
+	return brWeapons[weaponType][randomIndex]
+}
+
+const primaryWeapon = getRandomWeapon(primaryType)
+const secondaryWeapon = getRandomWeapon(secondaryType)
+
+const primaryWeaponName = primaryWeapon.name
+const secondaryWeaponName = secondaryWeapon.name
+
+let primaryAmmoType = ""
+let secondaryAmmoType = ""
+
+switch (primaryType) {
+	case "assault":
+		primaryAmmoType = "Heavy Ammo"
+		break
+	case "sniper":
+		primaryAmmoType = "Sniper Ammo"
+		break
+	case "lmg":
+		primaryAmmoType = "Heavy Ammo"
+		break
+	case "smg":
+		primaryAmmoType = "Light Ammo"
+		break
+	case "shotgun":
+		primaryAmmoType = "Shotgun Ammo"
+		break
+	case "marksman":
+		primaryAmmoType = "Sniper Ammo"
+		break
+	case "pistol":
+		switch (primaryWeaponName) {
+			case "Crossbow":
+				primaryAmmoType = "Sniper Ammo"
+				break
+			case "Shorty":
+				primaryAmmoType = "Shotgun Ammo"
+				break
+			default:
+				primaryAmmoType = "Light Ammo"
+				break
+		}
+		break
+	default:
+		primaryAmmoType = "Unknown"
+		break
+}
+
+switch (secondaryType) {
+	case "assault":
+		secondaryAmmoType = "Heavy Ammo"
+		break
+	case "sniper":
+		secondaryAmmoType = "Sniper Ammo"
+		break
+	case "lmg":
+		secondaryAmmoType = "Heavy Ammo"
+		break
+	case "smg":
+		secondaryAmmoType = "Light Ammo"
+		break
+	case "shotgun":
+		secondaryAmmoType = "Shotgun Ammo"
+		break
+	case "marksman":
+		secondaryAmmoType = "Sniper Ammo"
+		break
+	case "pistol":
+		switch (secondaryWeaponName) {
+			case "Crossbow":
+				secondaryAmmoType = "Sniper Ammo"
+				break
+			case "Shorty":
+				secondaryAmmoType = "Shotgun Ammo"
+				break
+			default:
+				secondaryAmmoType = "Light Ammo"
+				break
+		}
+		break
+	default:
+		secondaryAmmoType = "Unknown"
+		break
+}
+
+function constructWeaponObject(weapon: any) {
+
+	let [name, ...other] = Object.keys(weapon)
+
+	return other
+}
+
+const primaryWeaponAttachmentTypes = constructWeaponObject(primaryWeapon)
+const secondaryWeaponAttachmentTypes = constructWeaponObject(secondaryWeapon)
+
+function selectRandomAttachmentType(attachmentTypes: string[], numberOfTypes: number) {
+
+	let attachments = attachmentTypes.slice()
+
+	for (let i = attachments.length - 1; i >= 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[attachments[i], attachments[j]] = [attachments[j], attachments[i]];
+	}
+
+	return attachments.slice(0, numberOfTypes)
+
+}
+
+const attachmentSlotNumber = 5
+
+const primaryAttachments = selectRandomAttachmentType(primaryWeaponAttachmentTypes, attachmentSlotNumber)
+const secondaryAttachments = selectRandomAttachmentType(secondaryWeaponAttachmentTypes, attachmentSlotNumber)
+
+let primaryAttachmentTypeOne = primaryAttachments[0]
+let primaryAttachmentTypeTwo = primaryAttachments[1]
+let primaryAttachmentTypeThree = primaryAttachments[2]
+let primaryAttachmentTypeFour = primaryAttachments[3]
+let primaryAttachmentTypeFive = primaryAttachments[4]
+
+let secondaryAttachmentTypeOne = secondaryAttachments[0]
+let secondaryAttachmentTypeTwo = secondaryAttachments[1]
+let secondaryAttachmentTypeThree = secondaryAttachments[2]
+let secondaryAttachmentTypeFour = secondaryAttachments[3]
+let secondaryAttachmentTypeFive = secondaryAttachments[4]
+
+let attachmentTypeOne = ""
+let attachmentTypeTwo = ""
+let attachmentTypeThree = ""
+let attachmentTypeFour = ""
+let attachmentTypeFive = ""
+
+switch (primaryAttachmentTypeOne) {
+	case "muzzle":
+		attachmentTypeOne = "Muzzle"
+		break
+	case "barrel":
+		attachmentTypeOne = "Barrel"
+		break
+	case "optic":
+		attachmentTypeOne = "Optic"
+		break
+	case "stock":
+		attachmentTypeOne = "Stock"
+		break
+	case "perk":
+		attachmentTypeOne = "Perk"
+		break
+	case "laser":
+		attachmentTypeOne = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				attachmentTypeOne = "Trigger Action"
+				break
+			default:
+				attachmentTypeOne = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				attachmentTypeOne = "Smoothbore"
+				break
+			default:
+				attachmentTypeOne = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				attachmentTypeOne = "Bolt"
+				break
+			default:
+				attachmentTypeOne = "Rear Grip"
+				break
+		}
+		break
+		case "bowstring":
+		attachmentTypeOne = "Bowstring"
+		break
+	case "limb":
+		attachmentTypeOne = "Limb"
+		break
+	case "bolt":
+		attachmentTypeOne = "Bolt"
+		break
+	case "guard":
+		attachmentTypeOne = "Guard"
+		break
+	case "underbarrel":
+		attachmentTypeOne = "Underbarrel"
+		break
+	case "triggerAction":
+		attachmentTypeOne = "Trigger Action"
+		break
+	case "foregrip":
+		attachmentTypeOne = "Foregrip"
+		break
+	default:
+		attachmentTypeOne = "Unknown"
+		break
+}
+
+switch (primaryAttachmentTypeTwo) {
+	case "muzzle":
+		attachmentTypeTwo = "Muzzle"
+		break
+	case "barrel":
+		attachmentTypeTwo = "Barrel"
+		break
+	case "optic":
+		attachmentTypeTwo = "Optic"
+		break
+	case "stock":
+		attachmentTypeTwo = "Stock"
+		break
+	case "perk":
+		attachmentTypeTwo = "Perk"
+		break
+	case "laser":
+		attachmentTypeTwo = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				attachmentTypeTwo = "Trigger Action"
+				break
+			default:
+				attachmentTypeTwo = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				attachmentTypeTwo = "Smoothbore"
+				break
+			default:
+				attachmentTypeTwo = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				attachmentTypeTwo = "Bolt"
+				break
+			default:
+				attachmentTypeTwo = "Rear Grip"
+				break
+		}
+		break
+		case "bowstring":
+		attachmentTypeTwo = "Bowstring"
+		break
+	case "limb":
+		attachmentTypeTwo = "Limb"
+		break
+	case "bolt":
+		attachmentTypeTwo = "Bolt"
+		break
+	case "guard":
+		attachmentTypeTwo = "Guard"
+		break
+	case "underbarrel":
+		attachmentTypeTwo = "Underbarrel"
+		break
+	case "triggerAction":
+		attachmentTypeTwo = "Trigger Action"
+		break
+	case "foregrip":
+		attachmentTypeTwo = "Foregrip"
+		break
+	default:
+		attachmentTypeTwo = "Unknown"
+		break
+}
+
+switch (primaryAttachmentTypeThree) {
+	case "muzzle":
+		attachmentTypeThree = "Muzzle"
+		break
+	case "barrel":
+		attachmentTypeThree = "Barrel"
+		break
+	case "optic":
+		attachmentTypeThree = "Optic"
+		break
+	case "stock":
+		attachmentTypeThree = "Stock"
+		break
+	case "perk":
+		attachmentTypeThree = "Perk"
+		break
+	case "laser":
+		attachmentTypeThree = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				attachmentTypeThree = "Trigger Action"
+				break
+			default:
+				attachmentTypeThree = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				attachmentTypeThree = "Smoothbore"
+				break
+			default:
+				attachmentTypeThree = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				attachmentTypeThree = "Bolt"
+				break
+			default:
+				attachmentTypeThree = "Rear Grip"
+				break
+		}
+		break
+		case "bowstring":
+		attachmentTypeThree = "Bowstring"
+		break
+	case "limb":
+		attachmentTypeThree = "Limb"
+		break
+	case "bolt":
+		attachmentTypeThree = "Bolt"
+		break
+	case "guard":
+		attachmentTypeThree = "Guard"
+		break
+	case "underbarrel":
+		attachmentTypeThree = "Underbarrel"
+		break
+	case "triggerAction":
+		attachmentTypeThree = "Trigger Action"
+		break
+	case "foregrip":
+		attachmentTypeThree = "Foregrip"
+		break
+	default:
+		attachmentTypeThree = "Unknown"
+		break
+}
+
+switch (primaryAttachmentTypeFour) {
+	case "muzzle":
+		attachmentTypeFour = "Muzzle"
+		break
+	case "barrel":
+		attachmentTypeFour = "Barrel"
+		break
+	case "optic":
+		attachmentTypeFour = "Optic"
+		break
+	case "stock":
+		attachmentTypeFour = "Stock"
+		break
+	case "perk":
+		attachmentTypeFour = "Perk"
+		break
+	case "laser":
+		attachmentTypeFour = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				attachmentTypeFour = "Trigger Action"
+				break
+			default:
+				attachmentTypeFour = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				attachmentTypeFour = "Smoothbore"
+				break
+			default:
+				attachmentTypeFour = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				attachmentTypeFour = "Bolt"
+				break
+			default:
+				attachmentTypeFour = "Rear Grip"
+				break
+		}
+		break
+		case "bowstring":
+		attachmentTypeFour = "Bowstring"
+		break
+	case "limb":
+		attachmentTypeFour = "Limb"
+		break
+	case "bolt":
+		attachmentTypeFour = "Bolt"
+		break
+	case "guard":
+		attachmentTypeFour = "Guard"
+		break
+	case "underbarrel":
+		attachmentTypeFour = "Underbarrel"
+		break
+	case "triggerAction":
+		attachmentTypeFour = "Trigger Action"
+		break
+	case "foregrip":
+		attachmentTypeFour = "Foregrip"
+		break
+	default:
+		attachmentTypeFour = "Unknown"
+		break
+}
+
+switch (primaryAttachmentTypeFive) {
+	case "muzzle":
+		attachmentTypeFive = "Muzzle"
+		break
+	case "barrel":
+		attachmentTypeFive = "Barrel"
+		break
+	case "optic":
+		attachmentTypeFive = "Optic"
+		break
+	case "stock":
+		attachmentTypeFive = "Stock"
+		break
+	case "perk":
+		attachmentTypeFive = "Perk"
+		break
+	case "laser":
+		attachmentTypeFive = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				attachmentTypeFive = "Trigger Action"
+				break
+			default:
+				attachmentTypeFive = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				attachmentTypeFive = "Smoothbore"
+				break
+			default:
+				attachmentTypeFive = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				attachmentTypeFive = "Bolt"
+				break
+			default:
+				attachmentTypeFive = "Rear Grip"
+				break
+		}
+		break
+		case "bowstring":
+		attachmentTypeFive = "Bowstring"
+		break
+	case "limb":
+		attachmentTypeFive = "Limb"
+		break
+	case "bolt":
+		attachmentTypeFive = "Bolt"
+		break
+	case "guard":
+		attachmentTypeFive = "Guard"
+		break
+	case "underbarrel":
+		attachmentTypeFive = "Underbarrel"
+		break
+	case "triggerAction":
+		attachmentTypeFive = "Trigger Action"
+		break
+	case "foregrip":
+		attachmentTypeFive = "Foregrip"
+		break
+	default:
+		attachmentTypeFive = "Unknown"
+		break
+}
+
+let secondaryAttachmentOne = ""
+let secondaryAttachmentTwo = ""
+let secondaryAttachmentThree = ""
+let secondaryAttachmentFour = ""
+let secondaryAttachmentFive = ""
+
+switch (secondaryAttachmentTypeOne) {
+	case "muzzle":
+		secondaryAttachmentOne = "Muzzle"
+		break
+	case "barrel":
+		secondaryAttachmentOne = "Barrel"
+		break
+	case "optic":
+		secondaryAttachmentOne = "Optic"
+		break
+	case "stock":
+		secondaryAttachmentOne = "Stock"
+		break
+	case "perk":
+		secondaryAttachmentOne = "Perk"
+		break
+	case "laser":
+		secondaryAttachmentOne = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				secondaryAttachmentOne = "Trigger Action"
+				break
+			default:
+				secondaryAttachmentOne = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				secondaryAttachmentOne = "Smoothbore"
+				break
+			default:
+				secondaryAttachmentOne = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				secondaryAttachmentOne = "Bolt"
+				break
+			default:
+				secondaryAttachmentOne = "Rear Grip"
+				break
+		}
+		break
+		case "bowstring":
+		secondaryAttachmentOne = "Bowstring"
+		break
+	case "limb":
+		secondaryAttachmentOne = "Limb"
+		break
+	case "bolt":
+		secondaryAttachmentOne = "Bolt"
+		break
+	case "guard":
+		secondaryAttachmentOne = "Guard"
+		break
+	case "underbarrel":
+		secondaryAttachmentOne = "Underbarrel"
+		break
+	case "triggerAction":
+		secondaryAttachmentOne = "Trigger Action"
+		break
+	case "foregrip":
+		secondaryAttachmentOne = "Foregrip"
+		break
+	default:
+		secondaryAttachmentOne = "Unknown"
+		break
+}
+
+switch (secondaryAttachmentTypeTwo) {
+	case "muzzle":
+		secondaryAttachmentTwo = "Muzzle"
+		break
+	case "barrel":
+		secondaryAttachmentTwo = "Barrel"
+		break
+	case "optic":
+		secondaryAttachmentTwo = "Optic"
+		break
+	case "stock":
+		secondaryAttachmentTwo = "Stock"
+		break
+	case "perk":
+		secondaryAttachmentTwo = "Perk"
+		break
+	case "laser":
+		secondaryAttachmentTwo = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				secondaryAttachmentTwo = "Trigger Action"
+				break
+			default:
+				secondaryAttachmentTwo = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				secondaryAttachmentTwo = "Smoothbore"
+				break
+			default:
+				secondaryAttachmentTwo = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				secondaryAttachmentTwo = "Bolt"
+				break
+			default:
+				secondaryAttachmentTwo = "Rear Grip"
+				break
+		}
+		break
+		case "bowstring":
+		secondaryAttachmentTwo = "Bowstring"
+		break
+	case "limb":
+		secondaryAttachmentTwo = "Limb"
+		break
+	case "bolt":
+		secondaryAttachmentTwo = "Bolt"
+		break
+	case "guard":
+		secondaryAttachmentTwo = "Guard"
+		break
+	case "underbarrel":
+		secondaryAttachmentTwo = "Underbarrel"
+		break
+	case "triggerAction":
+		secondaryAttachmentTwo = "Trigger Action"
+		break
+	case "foregrip":
+		secondaryAttachmentTwo = "Foregrip"
+		break
+	default:
+		secondaryAttachmentTwo = "Unknown"
+		break
+}
+
+switch (secondaryAttachmentTypeThree) {
+	case "muzzle":
+		secondaryAttachmentThree = "Muzzle"
+		break
+	case "barrel":
+		secondaryAttachmentThree = "Barrel"
+		break
+	case "optic":
+		secondaryAttachmentThree = "Optic"
+		break
+	case "stock":
+		secondaryAttachmentThree = "Stock"
+		break
+	case "perk":
+		secondaryAttachmentThree = "Perk"
+		break
+	case "laser":
+		secondaryAttachmentThree = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				secondaryAttachmentThree = "Trigger Action"
+				break
+			default:
+				secondaryAttachmentThree = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				secondaryAttachmentThree = "Smoothbore"
+				break
+			default:
+				secondaryAttachmentThree = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				secondaryAttachmentThree = "Bolt"
+				break
+			default:
+				secondaryAttachmentThree = "Rear Grip"
+				break
+		}
+		break
+		case "bowstring":
+		secondaryAttachmentThree = "Bowstring"
+		break
+	case "limb":
+		secondaryAttachmentThree = "Limb"
+		break
+	case "bolt":
+		secondaryAttachmentThree = "Bolt"
+		break
+	case "guard":
+		secondaryAttachmentThree = "Guard"
+		break
+	case "underbarrel":
+		secondaryAttachmentThree = "Underbarrel"
+		break
+	case "triggerAction":
+		secondaryAttachmentThree = "Trigger Action"
+		break
+	case "foregrip":
+		secondaryAttachmentThree = "Foregrip"
+		break
+	default:
+		secondaryAttachmentThree = "Unknown"
+		break
+}
+
+switch (secondaryAttachmentTypeFour) {
+	case "muzzle":
+		secondaryAttachmentFour = "Muzzle"
+		break
+	case "barrel":
+		secondaryAttachmentFour = "Barrel"
+		break
+	case "optic":
+		secondaryAttachmentFour = "Optic"
+		break
+	case "stock":
+		secondaryAttachmentFour = "Stock"
+		break
+	case "perk":
+		secondaryAttachmentFour = "Perk"
+		break
+	case "laser":
+		secondaryAttachmentFour = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				secondaryAttachmentFour = "Trigger Action"
+				break
+			default:
+				secondaryAttachmentFour = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				secondaryAttachmentFour = "Smoothbore"
+				break
+			default:
+				secondaryAttachmentFour = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				secondaryAttachmentFour = "Bolt"
+				break
+			default:
+				secondaryAttachmentFour = "Rear Grip"
+				break
+		}
+		break
+		case "bowstring":
+		secondaryAttachmentFour = "Bowstring"
+		break
+	case "limb":
+		secondaryAttachmentFour = "Limb"
+		break
+	case "bolt":
+		secondaryAttachmentFour = "Bolt"
+		break
+	case "guard":
+		secondaryAttachmentFour = "Guard"
+		break
+	case "underbarrel":
+		secondaryAttachmentFour = "Underbarrel"
+		break
+	case "triggerAction":
+		secondaryAttachmentFour = "Trigger Action"
+		break
+	case "foregrip":
+		secondaryAttachmentFour = "Foregrip"
+		break
+	default:
+		secondaryAttachmentFour = "Unknown"
+		break
+}
+
+switch (secondaryAttachmentTypeFive) {
+	case "muzzle":
+		secondaryAttachmentFive = "Muzzle"
+		break
+	case "barrel":
+		secondaryAttachmentFive = "Barrel"
+		break
+	case "optic":
+		secondaryAttachmentFive = "Optic"
+		break
+	case "stock":
+		secondaryAttachmentFive = "Stock"
+		break
+	case "perk":
+		secondaryAttachmentFive = "Perk"
+		break
+	case "laser":
+		secondaryAttachmentFive = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				secondaryAttachmentFive = "Trigger Action"
+				break
+			default:
+				secondaryAttachmentFive = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				secondaryAttachmentFive = "Smoothbore"
+				break
+			default:
+				secondaryAttachmentFive = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				secondaryAttachmentFive = "Bolt"
+				break
+			default:
+				secondaryAttachmentFive = "Rear Grip"
+				break
+		}
+		break
+		case "bowstring":
+		secondaryAttachmentFive = "Bowstring"
+		break
+	case "limb":
+		secondaryAttachmentFive = "Limb"
+		break
+	case "bolt":
+		secondaryAttachmentFive = "Bolt"
+		break
+	case "guard":
+		secondaryAttachmentFive = "Guard"
+		break
+	case "underbarrel":
+		secondaryAttachmentFive = "Underbarrel"
+		break
+	case "triggerAction":
+		secondaryAttachmentFive = "Trigger Action"
+		break
+	case "foregrip":
+		secondaryAttachmentFive = "Foregrip"
+		break
+	default:
+		secondaryAttachmentFive = "Unknown"
+		break
+}
+
+function getRandomAttachment(attachemtSlot: any) {
+
+const randomIndex = Math.floor(Math.random() * attachemtSlot.length)
+
+return attachemtSlot[randomIndex]
+}
+
+function getAttachmentArrays(weapon: any, key: string) {
+	if (!weapon[key]) {
+		return ["Close the popup window to re-generate your loadout"]
+	}
+	return weapon[key]
+}
+
+const primaryAttachmentSlotOne = getAttachmentArrays(primaryWeapon, primaryAttachmentTypeOne)
+const primaryAttachmentSlotTwo = getAttachmentArrays(primaryWeapon, primaryAttachmentTypeTwo)
+const primaryAttachmentSlotThree = getAttachmentArrays(primaryWeapon, primaryAttachmentTypeThree)
+const primaryAttachmentSlotFour = getAttachmentArrays(primaryWeapon, primaryAttachmentTypeFour)
+const primaryAttachmentSlotFive = getAttachmentArrays(primaryWeapon, primaryAttachmentTypeFive)
+
+const primaryAttachmentOne = getRandomAttachment(primaryAttachmentSlotOne)
+const primaryAttachmentTwo = getRandomAttachment(primaryAttachmentSlotTwo)
+const primaryAttachmentThree = getRandomAttachment(primaryAttachmentSlotThree)
+const primaryAttachmentFour = getRandomAttachment(primaryAttachmentSlotFour)
+const primaryAttachmentFive = getRandomAttachment(primaryAttachmentSlotFive)
+
+let secondaryAttachmentSlot1 = getAttachmentArrays(secondaryWeapon, secondaryAttachmentTypeOne)
+let secondaryAttachmentSlot2 = getAttachmentArrays(secondaryWeapon, secondaryAttachmentTypeTwo)
+let secondaryAttachmentSlot3 = getAttachmentArrays(secondaryWeapon, secondaryAttachmentTypeThree)
+let secondaryAttachmentSlot4 = getAttachmentArrays(secondaryWeapon, secondaryAttachmentTypeFour)
+let secondaryAttachmentSlot5 = getAttachmentArrays(secondaryWeapon, secondaryAttachmentTypeFive)
+
+let secondaryAttachment1 = getRandomAttachment(secondaryAttachmentSlot1)
+let secondaryAttachment2 = getRandomAttachment(secondaryAttachmentSlot2)
+let secondaryAttachment3 = getRandomAttachment(secondaryAttachmentSlot3)
+let secondaryAttachment4 = getRandomAttachment(secondaryAttachmentSlot4)
+let secondaryAttachment5 = getRandomAttachment(secondaryAttachmentSlot5)
+
+const operatorClassTypes = ["disrupt", "stealth", "support", "defense", "tracker"]
+
+function getRandomOperatorClassType() {
+	const randomIndex = Math.floor(Math.random() * operatorClassTypes.length)
+
+	return operatorClassTypes[randomIndex]
+}
+
+const operatorClassType = getRandomOperatorClassType()
+
+function getOperatorClasses(operatorClassType: string) {
+	return brClasses[operatorClassType]
+}
+
+const operatorClasses = getOperatorClasses(operatorClassType)
+
+function getRandomOperatorClass(operatorClasses: string[]) {
+	const randomIndex = Math.floor(Math.random() * operatorClasses.length)
+
+	return operatorClasses[randomIndex]
+}
+
+const operatorClass = getRandomOperatorClass(operatorClasses)
+
+async function getMeleeWeapons() {
+
+	return await fetch(`${Astro.url.origin}/data/brMelees.json`).then(res => res.json())
+}
+
+const meleeWeapons = await getMeleeWeapons()
+
+console.log(meleeWeapons)
+
+function getRandomMeleeWeapon(weaponType: any) {
+
+const randomIndex = Math.floor(Math.random() * weaponType.length)
+
+return weaponType[randomIndex]
+}
+
+const meleeWeapon = getRandomMeleeWeapon(meleeWeapons)
+
+
+---
+
+<MainLayout
+	lang="en"
+	title="Loadout"
+	desc={siteDesc}
+	url={siteUrl}
+	seoImage={siteImage}
+	icon="/favicon.svg"
+	iconType="image/svg+xml"
+>
+
+	<div class="loadout">
+
+		<h1>Your Battle Royale Loadout</h1>
+
+		<button class="regenerate-button" title="Regenerate your loadout" id="button">
+			Generate a new loadout
+		</button>
+
+		<h2>Melee Weapon</h2>
+
+		<span class="melee-weapon">{meleeWeapon}</span>
+
+		<hr />
+
+		<h2>Ground Loot Weapons</h2>
+
+		<div class="weapon-list">
+			<div class="weapon-list-item">
+				<div class="weapon-list-item-name">{groundLootPrimaryWeaponName}</div>
+				<div class="weapon-list-item-ammo">{groundLootPrimaryAmmoType}</div>
+			</div>
+
+			<div class="weapon-list-item">
+				<div class="weapon-list-item-name">{groundLootSecondaryWeaponName}</div>
+				<div class="weapon-list-item-ammo">{groundLootSecondaryAmmoType}</div>
+			</div>
+		</div>
+
+		<hr />
+
+		<h2>Custom Weapons</h2>
+
+		<div class="weapon-list">
+
+			<div class="weapon-list-item">
+				<div class="weapon-list-item-name">{primaryWeaponName}</div>
+				<div class="weapon-list-item-ammo">{primaryAmmoType}</div>
+
+				<h3>Attachments</h3>
+
+				<div class="attachment-slot">
+					<span class="attachment-type">{attachmentTypeOne}:</span>
+					<span class="attachment"> {primaryAttachmentOne}</span>
+				</div>
+				<div class="attachment-slot">
+					<span class="attachment-type">{attachmentTypeTwo}:</span>
+					<span class="attachment"> {primaryAttachmentTwo}</span>
+				</div>
+				<div class="attachment-slot">
+					<span class="attachment-type">{attachmentTypeThree}:</span>
+					<span class="attachment"> {primaryAttachmentThree}</span>
+				</div>
+				<div class="attachment-slot">
+					<span class="attachment-type">{attachmentTypeFour}:</span>
+					<span class="attachment"> {primaryAttachmentFour}</span>
+				</div>
+				<div class="attachment-slot">
+					<span class="attachment-type">{attachmentTypeFive}:</span>
+					<span class="attachment"> {primaryAttachmentFive}</span>
+				</div>
+			</div>
+
+			<div class="weapon-list-item">
+				<div class="weapon-list-item-name">{secondaryWeaponName}</div>
+				<div class="weapon-list-item-ammo">{secondaryAmmoType}</div>
+
+				<h3>Attachments</h3>
+				<div class="attachment-slot">
+					<span class="attachment-type">{secondaryAttachmentOne}:</span>
+					<span class="attachment"> {secondaryAttachment1}</span>
+				</div>
+				<div class="attachment-slot">
+					<span class="attachment-type">{secondaryAttachmentTwo}:</span>
+					<span class="attachment"> {secondaryAttachment2}</span>
+				</div>
+				<div class="attachment-slot">
+					<span class="attachment-type">{secondaryAttachmentThree}:</span>
+					<span class="attachment"> {secondaryAttachment3}</span>
+				</div>
+				<div class="attachment-slot">
+					<span class="attachment-type">{secondaryAttachmentFour}:</span>
+					<span class="attachment"> {secondaryAttachment4}</span>
+				</div>
+				<div class="attachment-slot">
+					<span class="attachment-type">{secondaryAttachmentFive}:</span>
+					<span class="attachment"> {secondaryAttachment5}</span>
+				</div>
+			</div>
+		</div>
+
+		<hr />
+
+		<h2>Operator Class</h2>
+
+		<div class="operator-class">
+			<span class="operator-class-name">{operatorClass}</span>
+		</div>
+	</div>
+
+</MainLayout>
+
+<style>
+
+	.loadout {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	.loadout > * {
+		max-width: 500px;
+	}
+
+	.loadout > h1 {
+		font-size: 2rem;
+	}
+
+	.loadout > h2 {
+		font-size: 1.5rem;
+	}
+
+	.loadout > button {
+		font-size: 1.2rem;
+		padding: 0.5rem 1rem;
+		border-radius: 0.5rem;
+		background-color: #ffee33;
+		color: #000;
+		cursor: pointer;
+	}
+
+	.loadout > button:hover {
+		background-color: #ffcc00;
+	}
+
+	.weapon-list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+
+	.weapon-list-item {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.weapon-list-item-name {
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+
+	.weapon-list-item-ammo {
+		font-size: 0.8rem;
+	}
+
+	hr {
+		border: 0;
+		width: 100%;
+		height: 1px;
+		background: #ccc;
+	}
+
+	.attachment-slot {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.attachment-type {
+		font-weight: bold;
+	}
+
+	.attachment {
+		font-size: 0.8rem;
+	}
+
+	.operator-class {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.operator-class-name {
+		font-size: 1.5rem;
+	}
+
+	.melee-weapon {
+		font-size: 1.5rem;
+	}
+
+</style>
+
+<script>
+
+    const regenerateButton = document.getElementById("button");
+
+	if(!regenerateButton) {
+		throw new Error("regenerateButton not found");
+	}
+
+    regenerateButton.addEventListener("click", function () {
+        window.location.reload();
+    });
+
+</script>

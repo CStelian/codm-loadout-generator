@@ -1,0 +1,8 @@
+{
+    "assault": ["AK117", "AK-47", "M4", "ASM10", "HVK-30", "KN-44", "M13", "Kilo 14", "Maddox", "BP50"],
+    "sniper": ["XPR-50", "DL Q33", "Rytec AMR", "LW3-Tundra"],
+    "lmg": ["RPD", "Hades"],
+    "smg": ["RUS-79U", "QQ9", "PP19 Bizon", "CBR4", "MAC-10", "Switchblade X9", "CX-9"],
+    "shotgun": ["BY15", "HS2126", "Argus"],
+    "marksman": ["Kilo Bolt-Action", "SP-R 208"]
+}

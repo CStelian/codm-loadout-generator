@@ -344,6 +344,17 @@
             "underbarrel": ["Merc Foregrip", "Strike Foregrip", "Stable Bipod", "Operator Foregrip", "Ranger Foregrip", "Tactical Foregrip A", "Cronen Shark II", "Laser Integrated Foregrip"],
             "ammunition": ["Fast Reload Mag", "Supportive Mag Drum", "Hi-Accuracy Sniper Ammo"],
             "rearGrip": ["Ergonomic Grip", "Lightweight Grip", "Accurate Grip", "Polymer Grip"]
+        },
+        {
+            "name": "BP50",
+            "muzzle": ["MK. 2 Stabilizer", "Quicksilver Silencer", "Recoil Booster", "Maxim Silencer", "Scythe Compensator"],
+            "barrel": ["MAES 538mm Kort", "DESMET 540mm PMH", "LEROY 438mm Rapid"],
+            "optic": ["Classic Red Dot Sight", "Red Dot Sight 1", "Red Dot Sight 2", "Red Dot Sight 3", "Red Dot Sight 4", "Red Dot Sight 5", "Red Dot Sight 6", "Classic Holographic Sight", "Holographic Sight 1", "Holographic Sight 2", "Holographic Sight 3", "Tactical Scope", "Nydar Model 47", "MK 3 Sunfilter", "3X Tactical Scope 1", "3X Tactical Scope 2", "3X Tactical Scope 3", "4X Tactical Scope", "OWC 4.4X Tactical Scope", "RTC 4.4X Tactical Scope"],
+            "stock": ["LEROY Custom", "MAES Skeletal", "Removed Stock", "DESMET NOM 11S"],
+            "perk": ["Sleight of Hand", "Tough", "Full Ammo", "FMJ", "Disable", "Melee Master", "Wounding", "Long Shot"],
+            "laser": ["RTC Laser 1mW", "MIP Laser 5mW", "Aim Assist Laser"],
+            "ammunition": ["5.6mm 45 Round Mags", ".30 Russian Short 60 Round Drums", "7.62x54mmR 30 Round Mags"],
+            "rearGrip": ["Granular Grip", "Fabric Grip", "Pine Tar Grip", "Polymer Grip", "Rubber Grip"]
         }
     ],
     "sniper": [
@@ -418,7 +429,7 @@
             "muzzle": ["OWC Light Suppressor", "MIP Light Flash Guard", "RTC Compensator", "Monolithic Suppressor", "RTC Light Muzzle Brake", "Tactical Suppressor"],
             "barrel": ["MIP Tac Long", "MIP Memorial Cowboy", "MIP Steady"],
             "optic": ["3X Tactical Scope A", "3X Tactical Scope B", "6X Tactical Scope B", "3X Tactical Scope C", "6X Tactical Scope C", "4X Tactical Scope", "Tactical Scope"],
-            "stock": ["Granulated Grip Tape", "Stippled Grip Tape", "Rubberized Grip Tape"],
+            "stock": ["YKM Light Stock", "OWC Skeleton Stock", "RTC Steady Stock", "YKM Combat Stock", "MIP Stalker Stock"],
             "perk": ["Headshot Slow", "Bullet Return", "Full Ammo", "Sleight of Hand", "FMJ", "Fast Switch", "Wounding", "Disable", "Stealth Kill"],
             "laser": ["OWC Laser - Tactical"],
             "underbarrel": ["Bipod"],
