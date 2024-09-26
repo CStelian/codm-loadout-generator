@@ -1119,9 +1119,6 @@
             "laser": ["OWC Laser - Tactical"],
             "ammunition": [".30 - 30 Ammo"],
             "rearGrip": ["Granulated Grip Tape", "Rubberized Grip Tape", "Stippled Grip Tape"]
-        },
-        {
-            "name": "Type 63"
         }
     ]
 }
