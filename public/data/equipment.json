@@ -1,6 +1,11 @@
 {
     "operatorSkill": ["Purifier", "Death Machine", "War Machine", "Tempest", "Transform Shield", "Sparrow", "Gravity Spikes", "H.I.V.E.", "Annihilator", "Shadow Blade", "Equalizer", "Ballistic Shield", "Gravity Vortex Gun", "Bull Charge", "K9 UNIT", "Kinetic Armor", "TAK-5", "Munitions Box", "Reactor Core", "Claw", "Ballista EM3", "Tac-Deploy", "Misdirection Device", "Havoc"],
-    "scorestreaks": ["Shield Turret", "UAV", "RC-XD", "Shock RC", "Hunter Killer Drone", "Care Package", "Counter-UAV", "SAM Turret", "MQ-27 Dragonfire", "Guardian", "Predator Missile", "Wheelson", "Sentry Gun", "Hawk X3", "Lightning Strike", "XS1 Goliath", "Cluster Strike", "Orbital Laser", "Napalm", "Stealth Chopper", "Emergency Airdrop", "EMP Systems", "Advanced UAV", "Swarm", "Chopper Gunner", "VTOL", "Gunship"],
+    "scorestreaks": ["Shield Turret", "UAV", "RC-XD", "Shock RC", "Hunter Killer Drone", "Care Package", "Counter-UAV", "SAM Turret", "MQ-27 Dragonfire", "Guardian", "Predator Missile", "Wheelson", "Sentry Gun", "Strafe Run", "Hawk X3", "Lightning Strike", "XS1 Goliath", "Cluster Strike", "Orbital Laser", "Napalm", "Stealth Chopper", "Emergency Airdrop", "EMP Systems", "Advanced UAV", "Swarm", "Chopper Gunner", "VTOL", "Gunship"],
+    "persistenceScorestreaks": {
+        "tierOne": ["Shield Turret", "UAV", "RC-XD", "Shock RC", "Hunter Killer Drone", "Care Package", "Counter-UAV"],
+        "tierTwo": ["SAM Turret", "MQ-27 Dragonfire", "Guardian", "Predator Missile", "Wheelson", "Sentry Gun", "Strafe Run", "Hawk X3", "Lightning Strike"],
+        "tierThree": ["XS1 Goliath", "Cluster Strike", "Orbital Laser", "Napalm", "Stealth Chopper", "Emergency Airdrop", "EMP Systems", "Advanced UAV", "Swarm", "Chopper Gunner", "VTOL", "Gunship"]
+    },
     "lethal": ["Frag Grenade", "Trip Mine", "Sticky Grenade", "Molotov Cocktail", "Combat Axe", "Thermite", "Contact Grenade", "C4", "Cluster Grenade"],
     "tactical": ["Smoke Grenade", "Flashbang Grenade", "Concussion Grenade", "Trophy System", "EMP", "Cryo Bomb", "Gas Grenade", "Heartbeat Sensor", "Flash Drone", "Decoy Grenade", "Storm Ball", "Echo Grenade", "Stim Shot", "Trip Sensor"]
 }

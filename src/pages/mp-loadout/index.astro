@@ -735,6 +735,9 @@ const equipment = await getEquipment()
 
 const operatorSkills = equipment.operatorSkill
 const scorestreaksArray = equipment.scorestreaks
+const persistenceScorestreaksTierOne = equipment.persistencePerks.tierOne
+const persistenceScorestreaksTierTwo = equipment.persistencePerks.tierTwo
+const persistenceScorestreaksTierThree = equipment.persistencePerks.tierThree
 const lethals = equipment.lethal
 const tacticals = equipment.tactical
 
@@ -803,6 +806,20 @@ let redPerk = getRandomPerk(redPerks)
 let greenPerk = getRandomPerk(greenPerks)
 let bluePerk = getRandomPerk(bluePerks)
 
+function getRandomPersistenceScorestreak(persistenceScorestreaks: string[], numberOfScorestreaks: number) {
+	let scorestreaks = persistenceScorestreaks.slice()
+	for (let i = scorestreaks.length - 1; i >= 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[scorestreaks[i], scorestreaks[j]] = [scorestreaks[j], scorestreaks[i]];
+	}
+	return scorestreaks.slice(0, numberOfScorestreaks)
+}
+
+if (bluePerk === "Persistence") {
+	scorestreakOne = getRandomPersistenceScorestreak(persistenceScorestreaksTierOne, 1)[0]
+	scorestreakTwo = getRandomPersistenceScorestreak(persistenceScorestreaksTierTwo, 1)[0]
+	scorestreakThree = getRandomPersistenceScorestreak(persistenceScorestreaksTierThree, 1)[0]
+}
 
 ---
 
