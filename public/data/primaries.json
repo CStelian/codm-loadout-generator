@@ -355,6 +355,18 @@
             "laser": ["RTC Laser 1mW", "MIP Laser 5mW", "Aim Assist Laser"],
             "ammunition": ["5.6mm 45 Round Mags", ".30 Russian Short 60 Round Drums", "7.62x54mmR 30 Round Mags"],
             "rearGrip": ["Granular Grip", "Fabric Grip", "Pine Tar Grip", "Polymer Grip", "Rubber Grip"]
+        },
+        {
+            "name": "LAG 53",
+            "muzzle": ["RTC Light Muzzle Brake", "Tactical Suppressor", "OWC Light Suppressor", "Monolithic Suppressor"],
+            "barrel": ["18.0\" Ultralight", "XRK Marksman", "13.0\"OSW Para"],
+            "optic": ["Classic Red Dot Sight", "Holographic Sight 1", "Red Dot Sight 6", "Holographic Sight 3", "Red Dot Sight 1", "Tactical Scope", "Classic Holographic Sight", "3X Tactical Scope 1", "Red Dot Sight 2", "Red Dot Sight 3", "Red Dot Sight 4", "Holographic Sight 2", "Red Dot Sight 5", "3X Tactical Scope 2", "3X Tactical Scope 3", "OWC 4.4X Tactical Scope", "RTC 4.4X Tactical Scope"],
+            "stock": ["Factory 18\" Aluminum Stock", "No Stock", "FSS Close Quarters Stock", "FORGE TAC Stalker"],
+            "perk": ["Sleight of Hand", "Tough", "Full Ammo", "FMJ", "Disable", "Melee Master", "Long Shot", "Wounding"],
+            "laser": ["RTC Laser 1mW", "MIP Laser 5mW", "Aim Assist Laser"],
+            "underbarrel": ["Strike Foregrip", "Merc Foregrip", "Ranger Foregrip", "Operator Foregrip"],
+            "ammunition": ["24 Round Mags", "30 Round Mags"],
+            "rearGrip": ["Granulated Grip Tape", "Stippled Grip Tape", "Rubberized Grip Tape"]
         }
     ],
     "sniper": [
@@ -936,6 +948,18 @@
             "underbarrel": ["Red Cell Foregrip", "Patrol Foregrip", "Striker Foregrip", "BO Foregrip", "SFOD Fast Foregrip", "Field Agent Foregrip"],
             "ammunition": ["Extended Mag", "Fast Extended Mag", "STANAG Mag", "Fast Mag", "SALVO Fast Mag", "Vandal Speed Loader"],
             "rearGrip": ["Field Tape", "Speed Tape", "Scrapper Grip", "Dropshot Wrap", "Serpent Wrap", "Airborne Elastic Wrap"]
+        },
+        {
+            "name": "ISO",
+            "muzzle": ["Tactical Suppressor", "MIP Light Flash Guard", "OWC Light Suppressor", "RTC Light Muzzle Brake", "OWC Light Compensator", "Monolithic Suppressor"],
+            "barrel": ["FTAC 225mm Dominator", "FSS Revolution", "ISO 140mm CQB", "FSS Nightshade"],
+            "optic": ["Classic Red Dot Sight", "Red Dot Sight 1", "Classic Holographic Sight", "Tactical Scope", "3X Tactical Scope 3", "Red Dot Sight 4", "Holographic Sight 2", "Red Dot Sight 2", "3X Tactical Scope 2", "Red Dot Sight 5", "Holographic Sight 3", "3X Tactical Scope 1", "Red Dot Sight 3", "Red Dot Sight 6", "Holographic Sight 1"],
+            "stock": ["FORGE TAC Ultralight", "FORGE TAC Stalker", "FTAC Vagrant", "ISO Collapsible"],
+            "perk": ["Long Shot", "Sleight of Hand", "Wounding", "Fast Reload Kill", "Wild Hip Fire", "Full Ammo", "FMJ", "Disable"],
+            "laser": ["RTC Laser 1mW", "MIP Laser 5mW", "OWC Laser - Tactical"],
+            "underbarrel": ["Strike Foregrip", "Merc Foregrip", "Tactical Foregrip A", "Ranger Foregrip", "Operator Foregrip"],
+            "ammunition": ["30 Round Mags", "50 Round Drums"],
+            "rearGrip": ["FSS Vice ISO Grip", "FTAC Elite ISO Grip", "ISO Tac-Form"]
         }
     ],
     "shotgun": [
