@@ -1,6 +1,5 @@
 ---
 import { siteSEO } from '@data/seo/siteSeo';
-
 interface Props {
     title: string;
     desc: string;
@@ -47,4 +46,5 @@ const siteTwitter = siteSEO.twitter;
     <meta name="twitter:description" content={desc} />
     <meta name="twitter:image" content={seoImage} />
     <link rel="icon" type={iconType} href={icon} />
+    <script src="/scripts/experiments.js" is:inline></script>
 </head>

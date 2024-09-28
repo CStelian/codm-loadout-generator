@@ -1,0 +1,1054 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { siteSEO } from "@data/seo/siteSeo";
+
+const siteDesc = siteSEO.description;
+const siteUrl = siteSEO.url;
+const siteImage = siteSEO.image;
+
+async function getZombiesWeapons() {
+	const response = await fetch(`${Astro.url.origin}/data/zombiesWeapons.json`);
+
+    if (!response.ok) {
+        throw new Error(`Failed to fetch data from ${response.url}: ${response.statusText}`);
+    }
+
+    return response.json();
+}
+
+async function getZombiesWeaponTypes() {
+	const response = await fetch(`${Astro.url.origin}/data/brWeaponTypes.json`);
+
+    if (!response.ok) {
+        throw new Error(`Failed to fetch data from ${response.url}: ${response.statusText}`);
+    }
+
+    return response.json();
+}
+
+const zombiesWeaponTypes = await getZombiesWeaponTypes();
+
+const zombiesWeapons = await getZombiesWeapons();
+
+function getRandomWeaponType(weaponTypes: string[]) {
+	const randomIndex = Math.floor(Math.random() * weaponTypes.length)
+	return weaponTypes[randomIndex]
+}
+
+const primaryWeaponType = getRandomWeaponType(zombiesWeaponTypes)
+const secondaryWeaponType = getRandomWeaponType(zombiesWeaponTypes)
+
+function getRandomWeapon(weaponType: any) {
+	const randomIndex = Math.floor(Math.random() * zombiesWeapons[weaponType].length)
+	return zombiesWeapons[weaponType][randomIndex]
+}
+
+const primaryWeapon = getRandomWeapon(primaryWeaponType)
+const secondaryWeapon = getRandomWeapon(secondaryWeaponType)
+
+function getWeaponObject(weapon: any) {
+	let [name, ...other] = Object.keys(weapon)
+	return other
+}
+
+const primaryWeaponObject = getWeaponObject(primaryWeapon)
+const secondaryWeaponObject = getWeaponObject(secondaryWeapon)
+
+let primaryWeaponName = primaryWeapon.name
+let secondaryWeaponName = secondaryWeapon.name
+
+function getRandomAttachmentType(attachmentTypes: string[], numberOfTypes: number) {
+	let attachments = attachmentTypes.slice()
+	for (let i = attachments.length - 1; i >= 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[attachments[i], attachments[j]] = [attachments[j], attachments[i]];
+	}
+	return attachments.slice(0, numberOfTypes)
+}
+
+const primaryAttachmentTypes = primaryWeaponObject
+const secondaryAttachmentTypes = secondaryWeaponObject
+
+const primaryAttachments = getRandomAttachmentType(primaryAttachmentTypes, 5)
+const secondaryAttachments = getRandomAttachmentType(secondaryAttachmentTypes, 5)
+
+let primaryAttachmentType1 = primaryAttachments[0]
+let primaryAttachmentType2 = primaryAttachments[1]
+let primaryAttachmentType3 = primaryAttachments[2]
+let primaryAttachmentType4 = primaryAttachments[3]
+let primaryAttachmentType5 = primaryAttachments[4]
+
+let secondaryAttachmentType1 = secondaryAttachments[0]
+let secondaryAttachmentType2 = secondaryAttachments[1]
+let secondaryAttachmentType3 = secondaryAttachments[2]
+let secondaryAttachmentType4 = secondaryAttachments[3]
+let secondaryAttachmentType5 = secondaryAttachments[4]
+
+let primaryAttachmentTypeOne = ""
+let primaryAttachmentTypeTwo = ""
+let primaryAttachmentTypeThree = ""
+let primaryAttachmentTypeFour = ""
+let primaryAttachmentTypeFive = ""
+
+let secondaryAttachmentTypeOne = ""
+let secondaryAttachmentTypeTwo = ""
+let secondaryAttachmentTypeThree = ""
+let secondaryAttachmentTypeFour = ""
+let secondaryAttachmentTypeFive = ""
+
+switch (primaryAttachmentType1) {
+	case "muzzle":
+		primaryAttachmentTypeOne = "Muzzle"
+		break
+	case "barrel":
+		primaryAttachmentTypeOne = "Barrel"
+		break
+	case "optic":
+		primaryAttachmentTypeOne = "Optic"
+		break
+	case "stock":
+		primaryAttachmentTypeOne = "Stock"
+		break
+	case "perk":
+		primaryAttachmentTypeOne = "Perk"
+		break
+	case "laser":
+		primaryAttachmentTypeOne = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				primaryAttachmentTypeOne = "Trigger Action"
+				break
+			default:
+				primaryAttachmentTypeOne = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				primaryAttachmentTypeOne = "Smoothbore"
+				break
+			default:
+				primaryAttachmentTypeOne = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				primaryAttachmentTypeOne = "Bolt"
+				break
+			default:
+				primaryAttachmentTypeOne = "Rear Grip"
+				break
+		}
+		break
+	case "foregrip":
+		primaryAttachmentTypeOne = "Foregrip"
+		break
+	default:
+		primaryAttachmentTypeOne = "Unknown"
+		break
+}
+
+switch (primaryAttachmentType2) {
+	case "muzzle":
+		primaryAttachmentTypeTwo = "Muzzle"
+		break
+	case "barrel":
+		primaryAttachmentTypeTwo = "Barrel"
+		break
+	case "optic":
+		primaryAttachmentTypeTwo = "Optic"
+		break
+	case "stock":
+		primaryAttachmentTypeTwo = "Stock"
+		break
+	case "perk":
+		primaryAttachmentTypeTwo = "Perk"
+		break
+	case "laser":
+		primaryAttachmentTypeTwo = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				primaryAttachmentTypeTwo = "Trigger Action"
+				break
+			default:
+				primaryAttachmentTypeTwo = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				primaryAttachmentTypeTwo = "Smoothbore"
+				break
+			default:
+				primaryAttachmentTypeTwo = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				primaryAttachmentTypeTwo = "Bolt"
+				break
+			default:
+				primaryAttachmentTypeTwo = "Rear Grip"
+				break
+		}
+		break
+	case "foregrip":
+		primaryAttachmentTypeTwo = "Foregrip"
+		break
+    default:
+		primaryAttachmentTypeTwo = "Unknown"
+		break
+}
+
+switch (primaryAttachmentType3) {
+	case "muzzle":
+		primaryAttachmentTypeThree = "Muzzle"
+		break
+	case "barrel":
+		primaryAttachmentTypeThree = "Barrel"
+		break
+	case "optic":
+		primaryAttachmentTypeThree = "Optic"
+		break
+	case "stock":
+		primaryAttachmentTypeThree = "Stock"
+		break
+	case "perk":
+		primaryAttachmentTypeThree = "Perk"
+		break
+	case "laser":
+		primaryAttachmentTypeThree = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				primaryAttachmentTypeThree = "Trigger Action"
+				break
+			default:
+				primaryAttachmentTypeThree = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				primaryAttachmentTypeThree = "Smoothbore"
+				break
+			default:
+				primaryAttachmentTypeThree = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				primaryAttachmentTypeThree = "Bolt"
+				break
+			default:
+				primaryAttachmentTypeThree = "Rear Grip"
+				break
+		}
+		break
+	case "foregrip":
+		primaryAttachmentTypeThree = "Foregrip"
+		break
+	default:
+		primaryAttachmentTypeThree = "Unknown"
+		break
+}
+
+switch (primaryAttachmentType4) {
+	case "muzzle":
+		primaryAttachmentTypeFour = "Muzzle"
+		break
+	case "barrel":
+		primaryAttachmentTypeFour = "Barrel"
+		break
+	case "optic":
+		primaryAttachmentTypeFour = "Optic"
+		break
+	case "stock":
+		primaryAttachmentTypeFour = "Stock"
+		break
+	case "perk":
+		primaryAttachmentTypeFour = "Perk"
+		break
+	case "laser":
+		primaryAttachmentTypeFour = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				primaryAttachmentTypeFour = "Trigger Action"
+				break
+			default:
+				primaryAttachmentTypeFour = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				primaryAttachmentTypeFour = "Smoothbore"
+				break
+			default:
+				primaryAttachmentTypeFour = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				primaryAttachmentTypeFour = "Bolt"
+				break
+			default:
+				primaryAttachmentTypeFour = "Rear Grip"
+				break
+		}
+		break
+	case "foregrip":
+		primaryAttachmentTypeFour = "Foregrip"
+		break
+	default:
+		primaryAttachmentTypeFour = "Unknown"
+		break
+}
+
+switch (primaryAttachmentType5) {
+	case "muzzle":
+		primaryAttachmentTypeFive = "Muzzle"
+		break
+	case "barrel":
+		primaryAttachmentTypeFive = "Barrel"
+		break
+	case "optic":
+		primaryAttachmentTypeFive = "Optic"
+		break
+	case "stock":
+		primaryAttachmentTypeFive = "Stock"
+		break
+	case "perk":
+		primaryAttachmentTypeFive = "Perk"
+		break
+	case "laser":
+		primaryAttachmentTypeFive = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				primaryAttachmentTypeFive = "Trigger Action"
+				break
+			default:
+				primaryAttachmentTypeFive = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				primaryAttachmentTypeFive = "Smoothbore"
+				break
+			default:
+				primaryAttachmentTypeFive = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				primaryAttachmentTypeFive = "Bolt"
+				break
+			default:
+				primaryAttachmentTypeFive = "Rear Grip"
+				break
+		}
+		break
+	case "foregrip":
+		primaryAttachmentTypeFive = "Foregrip"
+		break
+	default:
+		primaryAttachmentTypeFive = "Unknown"
+		break
+}
+
+switch (secondaryAttachmentType1) {
+	case "muzzle":
+		secondaryAttachmentTypeOne = "Muzzle"
+		break
+	case "barrel":
+		secondaryAttachmentTypeOne = "Barrel"
+		break
+	case "optic":
+		secondaryAttachmentTypeOne = "Optic"
+		break
+	case "stock":
+		secondaryAttachmentTypeOne = "Stock"
+		break
+	case "perk":
+		secondaryAttachmentTypeOne = "Perk"
+		break
+	case "laser":
+		secondaryAttachmentTypeOne = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				secondaryAttachmentTypeOne = "Trigger Action"
+				break
+			default:
+				secondaryAttachmentTypeOne = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				secondaryAttachmentTypeOne = "Smoothbore"
+				break
+			default:
+				secondaryAttachmentTypeOne = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				secondaryAttachmentTypeOne = "Bolt"
+				break
+			default:
+				secondaryAttachmentTypeOne = "Rear Grip"
+				break
+		}
+		break
+	case "foregrip":
+		secondaryAttachmentTypeOne = "Foregrip"
+		break
+	default:
+		secondaryAttachmentTypeOne = "Unknown"
+		break
+}
+
+switch (secondaryAttachmentType2) {
+	case "muzzle":
+		secondaryAttachmentTypeTwo = "Muzzle"
+		break
+	case "barrel":
+		secondaryAttachmentTypeTwo = "Barrel"
+		break
+    case "optic":
+		secondaryAttachmentTypeTwo = "Optic"
+		break
+	case "stock":
+		secondaryAttachmentTypeTwo = "Stock"
+		break
+    case "perk":
+		secondaryAttachmentTypeTwo = "Perk"
+		break
+	case "laser":
+		secondaryAttachmentTypeTwo = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				secondaryAttachmentTypeTwo = "Trigger Action"
+				break
+			default:
+				secondaryAttachmentTypeTwo = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				secondaryAttachmentTypeTwo = "Smoothbore"
+				break
+			default:
+				secondaryAttachmentTypeTwo = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				secondaryAttachmentTypeTwo = "Bolt"
+				break
+			default:
+				secondaryAttachmentTypeTwo = "Rear Grip"
+				break
+		}
+		break
+	case "foregrip":
+		secondaryAttachmentTypeTwo = "Foregrip"
+		break
+	default:
+		secondaryAttachmentTypeTwo = "Unknown"
+		break
+}
+
+switch (secondaryAttachmentType3) {
+	case "muzzle":
+		secondaryAttachmentTypeThree = "Muzzle"
+		break
+	case "barrel":
+		secondaryAttachmentTypeThree = "Barrel"
+		break
+	case "optic":
+		secondaryAttachmentTypeThree = "Optic"
+		break
+	case "stock":
+		secondaryAttachmentTypeThree = "Stock"
+		break
+	case "perk":
+		secondaryAttachmentTypeThree = "Perk"
+		break
+	case "laser":
+		secondaryAttachmentTypeThree = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				secondaryAttachmentTypeThree = "Trigger Action"
+				break
+			default:
+				secondaryAttachmentTypeThree = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				secondaryAttachmentTypeThree = "Smoothbore"
+				break
+			default:
+				secondaryAttachmentTypeThree = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				secondaryAttachmentTypeThree = "Bolt"
+				break
+			default:
+				secondaryAttachmentTypeThree = "Rear Grip"
+				break
+		}
+		break
+	case "foregrip":
+		secondaryAttachmentTypeThree = "Foregrip"
+		break
+	default:
+		secondaryAttachmentTypeThree = "Unknown"
+		break
+}
+
+switch (secondaryAttachmentType4) {
+	case "muzzle":
+		secondaryAttachmentTypeFour = "Muzzle"
+		break
+	case "barrel":
+		secondaryAttachmentTypeFour = "Barrel"
+		break
+	case "optic":
+		secondaryAttachmentTypeFour = "Optic"
+		break
+	case "stock":
+		secondaryAttachmentTypeFour = "Stock"
+		break
+	case "perk":
+		secondaryAttachmentTypeFour = "Perk"
+		break
+	case "laser":
+		secondaryAttachmentTypeFour = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				secondaryAttachmentTypeFour = "Trigger Action"
+				break
+			default:
+				secondaryAttachmentTypeFour = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				secondaryAttachmentTypeFour = "Smoothbore"
+				break
+			default:
+				secondaryAttachmentTypeFour = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				secondaryAttachmentTypeFour = "Bolt"
+				break
+			default:
+				secondaryAttachmentTypeFour = "Rear Grip"
+				break
+		}
+		break
+	case "foregrip":
+		secondaryAttachmentTypeFour = "Foregrip"
+		break
+	default:
+		secondaryAttachmentTypeFour = "Unknown"
+		break
+}
+
+switch (secondaryAttachmentType5) {
+    case "muzzle":
+		secondaryAttachmentTypeFive = "Muzzle"
+		break
+	case "barrel":
+		secondaryAttachmentTypeFive = "Barrel"
+		break
+	case "optic":
+		secondaryAttachmentTypeFive = "Optic"
+		break
+	case "stock":
+		secondaryAttachmentTypeFive = "Stock"
+		break
+	case "perk":
+		secondaryAttachmentTypeFive = "Perk"
+		break
+	case "laser":
+		secondaryAttachmentTypeFive = "Laser"
+		break
+	case "underbarrel":
+		switch (primaryWeaponName) {
+			case "Argus":
+				secondaryAttachmentTypeFive = "Trigger Action"
+				break
+			default:
+				secondaryAttachmentTypeFive = "Underbarrel"
+				break
+		}
+		break
+	case "ammunition":
+		switch (primaryWeaponName) {
+			case "R9-0":
+				secondaryAttachmentTypeFive = "Smoothbore"
+				break
+			default:
+				secondaryAttachmentTypeFive = "Ammunition"
+				break
+		}
+		break
+	case "rearGrip":
+		switch (primaryWeaponName) {
+			case "SP-R 208":
+				secondaryAttachmentTypeFive = "Bolt"
+				break
+			default:
+				secondaryAttachmentTypeFive = "Rear Grip"
+				break
+		}
+		break
+	case "foregrip":
+		secondaryAttachmentTypeFive = "Foregrip"
+		break
+	default:
+		secondaryAttachmentTypeFive = "Unknown"
+		break
+}
+
+function getAttachmentArrays(weapon: any, key: string) {
+	if (!weapon[key]) {
+		return ["Close the popup window to re-generate your loadout"]
+	}
+	return weapon[key]
+}
+
+const primaryAttachmentSlotOne = getAttachmentArrays(primaryWeapon, primaryAttachmentType1)
+const primaryAttachmentSlotTwo = getAttachmentArrays(primaryWeapon, primaryAttachmentType2)
+const primaryAttachmentSlotThree = getAttachmentArrays(primaryWeapon, primaryAttachmentType3)
+const primaryAttachmentSlotFour = getAttachmentArrays(primaryWeapon, primaryAttachmentType4)
+const primaryAttachmentSlotFive = getAttachmentArrays(primaryWeapon, primaryAttachmentType5)
+
+function getRandomAttachment(attachemtSlot: any) {
+
+	const randomIndex = Math.floor(Math.random() * attachemtSlot.length)
+
+	return attachemtSlot[randomIndex]
+}
+
+const primaryAttachmentOne = getRandomAttachment(primaryAttachmentSlotOne)
+const primaryAttachmentTwo = getRandomAttachment(primaryAttachmentSlotTwo)
+const primaryAttachmentThree = getRandomAttachment(primaryAttachmentSlotThree)
+const primaryAttachmentFour = getRandomAttachment(primaryAttachmentSlotFour)
+const primaryAttachmentFive = getRandomAttachment(primaryAttachmentSlotFive)
+
+let secondaryAttachmentSlotOne = getAttachmentArrays(secondaryWeapon, secondaryAttachmentType1)
+let secondaryAttachmentSlotTwo = getAttachmentArrays(secondaryWeapon, secondaryAttachmentType2)
+let secondaryAttachmentSlotThree = getAttachmentArrays(secondaryWeapon, secondaryAttachmentType3)
+let secondaryAttachmentSlotFour = getAttachmentArrays(secondaryWeapon, secondaryAttachmentType4)
+let secondaryAttachmentSlotFive = getAttachmentArrays(secondaryWeapon, secondaryAttachmentType5)
+
+let secondaryAttachmentOne = getRandomAttachment(secondaryAttachmentSlotOne)
+let secondaryAttachmentTwo = getRandomAttachment(secondaryAttachmentSlotTwo)
+let secondaryAttachmentThree = getRandomAttachment(secondaryAttachmentSlotThree)
+let secondaryAttachmentFour = getRandomAttachment(secondaryAttachmentSlotFour)
+let secondaryAttachmentFive = getRandomAttachment(secondaryAttachmentSlotFive)
+
+async function getZombiesModules() {
+	return await fetch(`${Astro.url.origin}/data/zombiesModules.json`).then(res => res.json())
+}
+
+const zombiesModules = await getZombiesModules()
+
+function getRandomModule(modules: { name: string, abilities: { active: { name: string, description: string }, passive: { name: string, description: string } } }[]) {
+	const randomIndex = Math.floor(Math.random() * modules.length)
+	return modules[randomIndex]
+}
+
+const module = getRandomModule(zombiesModules)
+
+console.log(module)
+
+const moduleName = module.name
+
+const moduleActive = module.abilities.active
+const modulePassive = module.abilities.passive
+
+const moduleActiveName = moduleActive.name
+const moduleActiveDescription = moduleActive.description
+
+const modulePassiveName = modulePassive.name
+const modulePassiveDescription = modulePassive.description
+
+---
+
+<MainLayout
+	lang="en"
+	title="Zombies Loadout"
+	desc={siteDesc}
+	url={siteUrl}
+	seoImage={siteImage}
+	icon="/favicon.svg"
+	iconType="image/svg+xml"
+>
+
+    <div class="warning">
+        <h2>Warning</h2>
+        <p>This is a preview of the zombies loadout generator. It is not yet fully functional.</p>
+        <a class="give-feedback" href="/feedback" style="display: none;">Give feedback</a>
+    </div>
+
+    <div class="zombies-loadout">
+        <h1>Zombies Loadout</h1>
+
+        <button class="regenerate-button" title="Regenerate your loadout" id="button">
+            Generate a new loadout
+        </button>
+        
+        <div class="zombies-loadout-weapons">
+    
+            <div class="zombies-loadout-weapon">
+            <h2>{primaryWeaponName}</h2>
+            <ul class="zombies-loadout-list">
+                <li class="zombies-loadout-item">
+                    <span class="attachment-type">
+                        {primaryAttachmentTypeOne}:
+                    </span>
+                    <span>
+                        {primaryAttachmentOne}
+                    </span>
+                </li>
+                <li class="zombies-loadout-item">
+                    <span class="attachment-type">
+                        {primaryAttachmentTypeTwo}:
+                    </span>
+                    <span>
+                        {primaryAttachmentTwo}
+                    </span>
+                </li>
+                <li class="zombies-loadout-item">
+                    <span class="attachment-type">
+                        {primaryAttachmentTypeThree}:
+                    </span>
+                    <span>
+                        {primaryAttachmentThree}
+                    </span>
+                </li>
+                <li class="zombies-loadout-item">
+                    <span class="attachment-type">
+                        {primaryAttachmentTypeFour}:
+                    </span>
+                    <span>
+                        {primaryAttachmentFour}
+                    </span>
+                </li>
+                <li class="zombies-loadout-item">
+                    <span class="attachment-type">
+                        {primaryAttachmentTypeFive}:
+                    </span>
+                    <span>
+                        {primaryAttachmentFive}
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="zombies-loadout-weapon">
+            <h2>{secondaryWeaponName}</h2>
+            <ul class="zombies-loadout-list">
+                <li class="zombies-loadout-item">
+                    <span class="attachment-type">
+                        {secondaryAttachmentTypeOne}:
+                    </span>
+                    <span>
+                        {secondaryAttachmentOne}
+                    </span>
+                </li>
+                <li class="zombies-loadout-item">
+                    <span class="attachment-type">
+                        {secondaryAttachmentTypeTwo}:
+                    </span>
+                    <span>
+                        {secondaryAttachmentTwo}
+                    </span>
+                </li>
+                <li class="zombies-loadout-item">
+                    <span class="attachment-type">
+                        {secondaryAttachmentTypeThree}:
+                    </span>
+                    <span>
+                        {secondaryAttachmentThree}
+                    </span>
+                </li>
+                <li class="zombies-loadout-item">
+                    <span class="attachment-type">
+                        {secondaryAttachmentTypeFour}:
+                    </span>
+                    <span>
+                        {secondaryAttachmentFour}
+                    </span>
+                </li>
+                <li class="zombies-loadout-item">
+                    <span class="attachment-type">
+                        {secondaryAttachmentTypeFive}:
+                    </span>
+                    <span>
+                        {secondaryAttachmentFive}
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="zombies-loadout-module">
+        <h2>Classic Zombies Module</h2>
+        <div class="zombies-loadout-module">
+            <h3>{moduleName}</h3>
+
+            <div class="zombies-loadout-module-abilities">
+                <div class="zombies-loadout-module-active">
+                    <h4>{moduleActiveName}</h4>
+                    <p>{moduleActiveDescription}</p>
+                </div>
+                <div class="zombies-loadout-module-passive">
+                    <h4>{modulePassiveName}</h4>
+                    <p>{modulePassiveDescription}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	</div>
+</MainLayout>
+
+<style>
+		
+	main {
+		height: 100vh;
+		height: 100dvh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: #fff;
+	}
+
+	h1 {
+		font-size: 3rem;
+        margin-bottom: -1.5rem;
+	}
+
+	.zombies-loadout {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+    .zombies-loadout-weapons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .zombies-loadout-weapon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+	.zombies-loadout-list {
+		display: flex;
+        flex-direction: column;
+        align-items: center;
+	}
+
+    .zombies-loadout-item {
+        display: flex;
+        gap: 0.15rem;
+    }
+
+    .warning {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: #ffe937;
+        color: #000;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin-block: 1rem;
+        width: max-content;
+        margin-inline: auto;
+    }
+
+    .give-feedback {
+        background-color: #000;
+        color: #ffe937;
+        text-decoration: none;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        border: 1px solid #ffe937;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 1.2rem;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .give-feedback:hover {
+        background-color: #ffe937;
+        color: #000;
+        border: 1px solid #000;
+    }
+
+    .attachment-type {
+        font-weight: bold;
+        color: #ffe937;
+    }
+
+    .zombies-loadout-module {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .01rem;
+    }
+
+    .regenerate-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        background-color: #ffe937;
+        color: #000;
+        border-radius: 0.5rem;
+        font-size: 1.5rem;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        border: 1px solid #ffe937;
+        cursor: pointer;
+    }
+
+    .regenerate-button:hover {
+        background-color: #000;
+        color: #ffe937;
+    }
+
+    .zombies-loadout-module {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .01rem;
+    }
+
+    .zombies-loadout-module-abilities {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        align-items: center;
+        max-width: 50%;
+        margin: 0 auto;
+    }
+
+    .zombies-loadout-module-active {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .01rem;
+        text-align: center;
+        max-width: 50%;
+        margin-right: auto;
+    }
+
+    .zombies-loadout-module-passive {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: .01rem;
+        text-align: center;
+        max-width: 50%;
+        margin-left: auto;
+    }
+
+    @media screen and (max-width: 600px) {
+
+        .zombies-loadout-weapons {
+            grid-template-columns: 1fr;
+            max-width: 100%;
+            margin: 0 auto;
+            gap: 1rem;
+        }
+
+        .zombies-loadout-module-abilities {
+            grid-template-columns: 1fr;
+            max-width: 100%;
+            margin: 0 auto;
+            gap: 1rem;
+        }
+    }
+</style>
+
+<script>
+
+    const regenerateButton = document.getElementById("button");
+
+    if(!regenerateButton) {
+        throw new Error("regenerateButton not found");
+    }
+
+    regenerateButton.addEventListener("click", function () {
+        window.location.reload();
+    });
+
+</script>

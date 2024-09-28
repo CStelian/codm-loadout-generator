@@ -1,0 +1,67 @@
+[
+    {
+        "name": "Trap Master Module",
+        "abilities": {
+            "active": {
+                "name": "Electric Trip Wire",
+                "description": "Routes a high-voltage current line. Enemies passing through will take damage and movement speed will decrease."
+            },
+            "passive": {
+                "name": "Territorial Effect",
+                "description": "Increases team backup ammo and Sniper/LMG damage by 25%."
+            }
+        }
+    },
+    {
+        "name": "Medic Module",
+        "abilities": {
+            "active": {
+                "name": "Medical Station",
+                "description": "Instantly rescue all downed teammates and continuously heal allies in proximity."
+            },
+            "passive": {
+                "name": "Medic",
+                "description": "Increases team HP and Shotgun/SMG damage by 25%."
+            }
+        }
+    },
+    {
+        "name": "Poltergeist Module",
+        "abilities": {
+            "active": {
+                "name": "Active Camo",
+                "description": "Become invisibile and increase movement speed."
+            },
+            "passive": {
+                "name": "Voidwalker",
+                "description": "Increases team movement speed while also raising Shotgun damage by 25% and doubling Pistol damage."
+            }
+        }
+    },
+    {
+        "name": "Sentry Gun Module",
+        "abilities": {
+            "active": {
+                "name": "Sentry Gun",
+                "description": "Place a Sentry Gun that automatically attacks enemies within range"
+            },
+            "passive": {
+                "name": "Firepower",
+                "description": "Increases team fire rate and Sniper/Assault damage by 25%."
+            }
+        }
+    },
+    {
+        "name": "Ravager Launcher",
+        "abilities": {
+            "active": {
+                "name": "Ravager Launcher",
+                "description": "Deploy a Ravager Launcher that automatically locks onto enemy soldiers and vehicles within range."
+            },
+            "passive": {
+                "name": "Demo Expert",
+                "description": "Increases the damage of explosives by 100%."
+            }
+        }
+    }
+]

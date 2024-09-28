@@ -48,13 +48,12 @@ const siteImage = siteSEO.image
 			<a href="/br-loadout" class="generate-button">
 				Generate Battle Royale Loadout
 			</a>
-			<a href="/zombies-loadout" class="generate-button" aria-disabled="true">
+			<a href="#" class="generate-button" aria-disabled="true" id="zombies-button">
 				Generate Zombies Loadout (Coming Soon)
 			</a>
 		</div>
 
 	</main>
-
 </MainLayout>
 
 <style>
@@ -128,3 +127,28 @@ const siteImage = siteSEO.image
 	}
 
 </style>
+
+<script>
+
+	const localStorage = window.localStorage;
+	const zombiesButton = document.getElementById("zombies-button");
+
+	if(!localStorage) {
+		console.log('Local storage not supported');
+		throw new Error('Local storage not supported');
+	}
+
+	if(!zombiesButton) {
+		console.log('Zombies button not found');
+		throw new Error('Zombies button not found');
+	}
+
+	if(localStorage.getItem('zombies-loadout') === 'enabled') {
+		zombiesButton.innerText = 'Create Zombies Loadout (Experimental)';
+		zombiesButton.setAttribute('aria-disabled', 'false');
+		zombiesButton.setAttribute('href', '/zombies-loadout');
+	} else {
+		zombiesButton.innerText = 'Create Zombies Loadout (Coming Soon)';
+		zombiesButton.setAttribute('aria-disabled', 'true');
+	}
+</script>
