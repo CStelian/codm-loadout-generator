@@ -1064,8 +1064,20 @@ const modulePassiveDescription = modulePassive.description
 
     const zombiesExperiment = localStorage.getItem('zombies-loadout');
 
-    if(zombiesExperiment === 'disabled') {
-        return window.location.href = '/'
+    function experimentIsEnabled() {
+
+        if(zombiesExperiment === 'enabled') {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    const experimentEnabled = experimentIsEnabled();
+
+    if(!experimentEnabled) {
+        window.location.href = '/'
     }
 
 </script>
