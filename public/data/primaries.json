@@ -367,7 +367,92 @@
             "underbarrel": ["Strike Foregrip", "Merc Foregrip", "Ranger Foregrip", "Operator Foregrip"],
             "ammunition": ["24 Round Mags", "30 Round Mags"],
             "rearGrip": ["Granulated Grip Tape", "Stippled Grip Tape", "Rubberized Grip Tape"]
-        }
+        },
+        {
+            "name": "XM4",
+            "muzzle": [
+              "Muzzle Brake 5.56",
+              "Flashguard 5.56",
+              "Suppressor",
+              "Infantry Compensator",
+              "SOCOM Eliminator",
+              "Agency Suppressor"
+            ],
+            "barrel": [
+              "11.8\" Ranger",
+              "12.5\" Cavalry Lancer",
+              "13.5\" Reinforced Heavy",
+              "13.7\" Extended",
+              "13.7\" Takedown",
+              "13.5\" Task Force"
+            ],
+            "optic": [
+              "Classic Red Dot Sight",
+              "Red Dot Sight 1",
+              "Red Dot Sight 2",
+              "3X Tactical Scope 3",
+              "4X Tactical Scope",
+              "Red Dot Sight 3",
+              "Red Dot Sight 4",
+              "OWC 4.4X Tactical Scope",
+              "Red Dot Sight 5",
+              "Red Dot Sight 6",
+              "Classic Holographic Sight",
+              "Holographic Sight 1",
+              "Holographic Sight 2",
+              "Holographic Sight 3",
+              "RTC 4.4X Tactical Scope",
+              "Tactical Scope",
+              "3X Tactical Scope 1",
+              "3X Tactical Scope 2"
+            ],
+            "stock": [
+              "Tactical Stock",
+              "Wire Stock",
+              "Duster Stock",
+              "Buffer Tube",
+              "SAS Combat Stock",
+              "Raider Pad"
+            ],
+            "perk": [
+              "Sleight of Hand",
+              "Tough",
+              "Full Ammo",
+              "FMJ",
+              "Disable",
+              "Melee Master",
+              "Wounding",
+              "Long Shot"
+            ],
+            "laser": [
+              "MIP Laser 5mW",
+              "Aim Assist Laser"
+            ],
+            "underbarrel": [
+              "Foregrip",
+              "Infiltrator Grip",
+              "Patrol Grip",
+              "Bruiser Grip",
+              "Field Agent Grip",
+              "SFOD Speedgrip"
+            ],
+            "ammunition": [
+              "40 Rnd",
+              "Jungle-style Mag",
+              "35 Round Speed Mag",
+              "STANAG 50 Rnd",
+              "SAS Mag Clamp",
+              "SALVO 45 Rnd Fast Mag"
+            ],
+            "rearGrip": [
+              "Speed Tape",
+              "Dropshot Wrap",
+              "Field Tape",
+              "SASR Jungle Grip",
+              "Serpent Wrap",
+              "Airborne Elastic Wrap"
+            ]
+        }    
     ],
     "sniper": [
         {
@@ -649,7 +734,75 @@
             "underbarrel": ["SMLE Pistol Grip", "Carver Foregrip", "M1930 Madson", "Bipod", "MK6 PARA", "M1941 Handstop"],
             "ammunition": ["3mm Anti-material 125 Round Drums", "8MM JAEGER 100 Round Fast Mags", "8mm JAEGER 250 Round Box"],
             "rearGrip": ["Granular Grip", "Fabric Grip", "Taped Grip", "Pine Tar Grip", "Polymer Grip", "Rubber Grip", "Bakelite Grip", "Hatched Grip", "Stippled Grip", "Leather Grip"]
-        }
+        },
+        {
+            "name": "RAAL MG",
+            "muzzle": [
+              "Flash Guard",
+              "Muzzle Brake",
+              "Lightweight Suppressor",
+              "Tactical Suppressor",
+              "Compensator",
+              "RAAL Monocore"
+            ],
+            "barrel": [
+              "26.0\" RAAL ArcForge",
+              "32.0\" RAAL Line Breaker",
+              "25.0\" RAAL Tri-fold Lite5"
+            ],
+            "optic": [
+              "Classic Red Dot Sight",
+              "Red Dot Sight 1",
+              "4X Tactical Scope",
+              "Red Dot Sight 2",
+              "Red Dot Sight 3",
+              "Red Dot Sight 4",
+              "Red Dot Sight 5",
+              "Red Dot Sight 6",
+              "Classic Holographic Sight",
+              "Holographic Sight 1",
+              "Holographic Sight 2",
+              "Holographic Sight 3",
+              "Tactical Scope",
+              "3X Tactical Scope 1",
+              "3X Tactical Scope 2",
+              "3X Tactical Scope 3",
+              "OWC 4.4X Tactical Scope",
+              "RTC 4.4X Tactical Scope"
+            ],
+            "stock": [
+              "FSS Resistor",
+              "FTAC Sandpiper Pro",
+              "Folded Stock",
+              "FTAC Elevate"
+            ],
+            "perk": [
+              "Sleight of Hand",
+              "Tough",
+              "Full Ammo",
+              "FMJ",
+              "Disable",
+              "Wounding"
+            ],
+            "laser": [
+              "OWC Laser - Tactical"
+            ],
+            "underbarrel": [
+              "Tactical Foregrip B",
+              "Bipod",
+              "Snatch Foregrip",
+              "Ranger Foregrip"
+            ],
+            "ammunition": [
+              "150 Round Belt",
+              "50 Round Belts"
+            ],
+            "rearGrip": [
+              "Granulated Grip Tape",
+              "Stippled Grip Tape",
+              "Rubberized Grip Tape"
+            ]
+        }          
     ],
     "smg": [
         {
@@ -960,7 +1113,80 @@
             "underbarrel": ["Strike Foregrip", "Merc Foregrip", "Tactical Foregrip A", "Ranger Foregrip", "Operator Foregrip"],
             "ammunition": ["30 Round Mags", "50 Round Drums"],
             "rearGrip": ["FSS Vice ISO Grip", "FTAC Elite ISO Grip", "ISO Tac-Form"]
-        }
+        },
+        {
+            "name": "USS 9",
+            "muzzle": [
+              "RTC Light Muzzle Brake",
+              "MIP Light Flash Guard",
+              "Tactical Suppressor",
+              "OWC Light Compensator",
+              "OWC Light Suppressor",
+              "Monolithic Suppressor"
+            ],
+            "barrel": [
+              "13.1\" First Responder",
+              "16.5\" Factory Carbine",
+              "8.5\" Factory Mini",
+              "FSS Carbine Pro"
+            ],
+            "optic": [
+              "Classic Red Dot Sight",
+              "Red Dot Sight 2",
+              "Red Dot Sight 1",
+              "Classic Holographic Sight",
+              "3X Tactical Scope 1",
+              "Tactical Scope",
+              "Red Dot Sight 5",
+              "3X Tactical Scope 3",
+              "Red Dot Sight 3",
+              "Holographic Sight 2",
+              "3X Tactical Scope 2",
+              "Red Dot Sight 6",
+              "Holographic Sight 3",
+              "Holographic Sight 1",
+              "Red Dot Sight 4"
+            ],
+            "stock": [
+              "Standard-Issue Wood Stock",
+              "FSS Close Quarters Stock",
+              "FORGE TAC Ultralight",
+              "No Stock"
+            ],
+            "perk": [
+              "Sleight of Hand",
+              "Full Ammo",
+              "Wild Hip Fire",
+              "Long Shot",
+              "FMJ",
+              "Disable",
+              "Fast Reload Kill",
+              "Wounding"
+            ],
+            "laser": [
+              "RTC Laser 1mW",
+              "MIP Laser 5mW",
+              "OWC Laser - Tactical"
+            ],
+            "underbarrel": [
+              "Operator Foregrip",
+              "Merc Foregrip",
+              "Strike Foregrip",
+              "Ranger Foregrip",
+              "Tactical Foregrip A"
+            ],
+            "ammunition": [
+              "40 Round Mags",
+              "50 Round Reload",
+              ".41 AE 32-Round Mags"
+            ],
+            "rearGrip": [
+              "Stippled Grip Tape",
+              "Granulated Grip Tape",
+              "Rubberized Grip Tape"
+            ]
+          }
+          
     ],
     "shotgun": [
         {
@@ -1119,6 +1345,81 @@
             "laser": ["OWC Laser - Tactical"],
             "ammunition": [".30 - 30 Ammo"],
             "rearGrip": ["Granulated Grip Tape", "Rubberized Grip Tape", "Stippled Grip Tape"]
+        },
+        {
+            "name": "Type 63",
+            "muzzle": [
+              "Muzzle Brake 7.62",
+              "Silencer",
+              "Flashguard 7.62",
+              "Spetsnaz Compensator",
+              "KGB Eliminator",
+              "GRU Silencer"
+            ],
+            "barrel": [
+              "18.3\" Cavalry Lancer",
+              "16.4\" Rapid Fire",
+              "18.3\" Strike Team",
+              "16.4\" Titanium",
+              "21.5\" Match Grade",
+              "21.5\" Task Force"
+            ],
+            "optic": [
+              "Tactical Scope",
+              "6X Tactical Scope 2",
+              "4X Tactical Scope",
+              "3X Tactical Scope 1",
+              "6X Tactical Scope 3",
+              "3X Tactical Scope 2",
+              "3X Tactical Scope 3"
+            ],
+            "stock": [
+              "Tactical Stock",
+              "Wire Stock",
+              "Duster Pad",
+              "No Stock",
+              "Bandit Stock",
+              "KGB Pad"
+            ],
+            "perk": [
+              "Sleight of Hand",
+              "Fast Switch",
+              "Bullet Return",
+              "Disable",
+              "Wounding",
+              "FMJ",
+              "Headshot Slow"
+            ],
+            "laser": [
+              "1mW Steady Aim Laser",
+              "5mW Combat Laser",
+              "MIP Laser 5mW"
+            ],
+            "underbarrel": [
+              "Front Grip",
+              "Infiltrator Grip",
+              "Patrol Grip",
+              "Bruiser Grip",
+              "Spetsnaz Ergonomic Grip",
+              "VDV Speedgrip"
+            ],
+            "ammunition": [
+              "30 Rnd",
+              "Taped Mags",
+              "30 Round Speed Mags",
+              "Bakelite 35 Rnd",
+              "GRU Mag Clamp",
+              "VDV 35 Rnd Fast Mag"
+            ],
+            "rearGrip": [
+              "Rustle Grip Tape",
+              "Sturdy Grip Tape",
+              "Field Tape",
+              "Firm Grip Tape",
+              "Serpent Wrap",
+              "Airborne Elastic Wrap"
+            ]
         }
+          
     ]
 }
