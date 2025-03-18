@@ -1270,7 +1270,7 @@
             "perk": ["Sleight of Hand", "Speed Up Kill", "Slide Flak Jacket", "Wounding", "Full Ammo", "Disable"],
             "laser": ["RTC Laser 1mW", "OWC Laser - Tactical", "MIP Laser 5mW"],
             "underbarrel": ["Ranger Foregrip", "Operator Foregrip", "Merc Foregrip"],
-            "ammunition": ["MFT Heavy Smoothbore", "MFT Ultra Light Smoothbore", "MFT Urban Combat"],
+            "smoothbore": ["MFT Heavy Smoothbore", "MFT Ultra Light Smoothbore", "MFT Urban Combat"],
             "rearGrip": ["Granulated Grip Tape", "Rubberized Grip Tape", "Stippled Grip Tape"]
         },
         {
@@ -1293,9 +1293,62 @@
             "stock": ["BO Stock", "Steady Stock", "Combat Stock", "Outlaw Stock", "No Stock"],
             "perk": ["Sleight of Hand", "Speed Up Kill", "Full Ammo", "Disable", "Slide Flak Jacket", "Wounding"],
             "laser": ["RTC Laser 1mW", "MIP Laser 5mW", "OWC Laser - Tactical"],
-            "underbarrel": ["BO Lever", "Outlaw Lever", "Classical Lever"],
+            "triggerAction": ["BO Lever", "Outlaw Lever", "Classical Lever"],
             "ammunition": ["BO Mag", "Outlaw Mag", "Fast Extended Mag"],
             "rearGrip": ["BO Grip", "Non-slip Steady Grip", "Skeleton Grip", "Outlaw Grip"]
+        },
+        {
+            "name": "VLK Rogue",
+            "muzzle": [
+                "Muzzle Flash Guard",
+                "RTC Light Muzzle Brake",
+                "OWC Light Compensator",
+                "Tactical Suppressor",
+                "Choke",
+                "Monolithic Suppressor",
+                "FORGE TAC Marauder"
+            ],
+            "barrel": ["6\" Revolt", "VLK Czar", "16\" Warload"],
+            "optic": [
+                "Classic Red Dot Sight",
+                "Red Dot Sight 1",
+                "Tactical Scope",
+                "Red Dot Sight 4",
+                "Classic Holographic Sight",
+                "Holographic Sight 2",
+                "3X Tactical Scope 1",
+                "Red Dot Sight 3",
+                "3X Tactical Scope 2",
+                "3X Tactical Scope 3",
+                "Holographic Sight 3",
+                "Red Dot Sight 2",
+                "Red Dot Sight 6",
+                "Red Dot Sight 5",
+                "Holographic Sight 1"
+            ],
+            "stock": [
+                "No Stock",
+                "FORGE TAC Ultralight",
+                "FSS Close Quarters Stock",
+                "FTAC Hunter"
+            ],
+            "perk": [
+                "Sleight of Hand",
+                "Wounding",
+                "Slide Flak Jacket",
+                "Disable",
+                "Full Ammo",
+                "Speed Up Kill"
+            ],
+            "laser": ["RTC Laser 1mW", "MIP Laser 5mW", "OWC Laser - Tactical"],
+            "triggerAction": ["XRK ReliaGrip", "XRK Race Grip", "VLK Prime Pump Grip"],
+            "ammunition": [
+                "12 Round Mags",
+                "4 Round Mags",
+                "8 Round Slug Mags",
+                "8 Round Dragon's Breath Rounds"
+            ],
+            "rearGrip": ["Stippled Grip Tape", "Granulated Grip Tape", "Rubberized Grip Tape"]
         }
     ],
     "marksman": [
@@ -1333,7 +1386,7 @@
             "laser": ["OWC Laser - Tactical"],
             "underbarrel": ["Strike Foregrip", "Tactical Foregrip A", "Operator Foregrip", "Merc Foregrip", "Bipod", "Ranger Foregrip"],
             "ammunition": ["Extended Mag A", ".338 5 Round Reload", ".300 5 Round Reload"],
-            "rearGrip": ["Light Bolt", "Heavy Bolt"]
+            "bolt": ["Light Bolt", "Heavy Bolt"]
         },
         {
             "name": "MK2",

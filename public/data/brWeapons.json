@@ -1067,7 +1067,7 @@
             "stock": ["BO Stock", "Steady Stock", "Combat Stock", "Outlaw Stock", "No Stock"],
             "perk": ["Sleight of Hand", "Speed Up Kill", "Full Ammo", "Disable", "Slide Flak Jacket", "Wounding"],
             "laser": ["RTC Laser 1mW", "MIP Laser 5mW", "OWC Laser - Tactical"],
-            "underbarrel": ["BO Lever", "Outlaw Lever", "Classical Lever"],
+            "triggerAction": ["BO Lever", "Outlaw Lever", "Classical Lever"],
             "ammunition": ["BO Mag", "Outlaw Mag", "Fast Extended Mag"],
             "rearGrip": ["BO Grip", "Non-slip Steady Grip", "Skeleton Grip", "Outlaw Grip"]
         }
@@ -1107,7 +1107,7 @@
             "laser": ["OWC Laser - Tactical"],
             "underbarrel": ["Strike Foregrip", "Tactical Foregrip A", "Operator Foregrip", "Merc Foregrip", "Bipod", "Ranger Foregrip"],
             "ammunition": ["Extended Mag A", ".338 5 Round Reload", ".300 5 Round Reload"],
-            "rearGrip": ["Light Bolt", "Heavy Bolt"]
+            "bolt": ["Light Bolt", "Heavy Bolt"]
         },
         {
             "name": "MK2",
